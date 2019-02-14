@@ -36,9 +36,8 @@ oc delete all --selector app=nodejs-ex
 
 
 ### ConfigMaps
-```
+[Using ConfigMaps](https://github.com/tosin2013/openshift-demos/blob/master/configmaps.md)
 
-```
 ### Persistent Storage - OCS
 
 ### Pipelines
