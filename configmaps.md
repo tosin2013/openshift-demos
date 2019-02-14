@@ -1,4 +1,8 @@
 # Using ConfigMaps
+**Login to OpenShift**
+```
+oc login -u developer
+```
 
 **Clone Sample Application from git**
 ```
@@ -13,6 +17,9 @@ echo "color=$COLOR" > ui.properties
 **lets create the config map project**
 ```
 oc new-project configmap-example
+
+#minishift use myproject
+oc project myproject
 ```
 
 **Let’s create a ConfigMap, named config, with both a literal text, message=Hello world!, and the configuration file:**
@@ -34,5 +41,9 @@ oc create -f node-app-deployment.json
 oc create -f node-app-build.json
 ```
 
+**delete demo**
+```
+oc delete all --selector app=node-app
+```
 **Links**  
 [Configuring your application](https://blog.openshift.com/configuring-your-application-part-1/)
