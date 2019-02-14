@@ -34,5 +34,5 @@ oc create -f node-app-deployment.json
 oc create -f node-app-build.json
 ```
 
-Links
+**Links**  
 [Configuring your application](https://blog.openshift.com/configuring-your-application-part-1/)
