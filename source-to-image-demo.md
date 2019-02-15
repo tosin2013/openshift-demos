@@ -42,14 +42,14 @@ cd simple-http-server
 cat Dockerfile
 docker build -t simple-http-server .
 s2i build \
-  https://github.com/BlackrockDigital/startbootstrap-landing-page\
-  simple-http-server \
-  static-web-site
+https://github.com/BlackrockDigital/startbootstrap-landing-page\
+simple-http-server \
+static-web-site
 docker images
 docker run --rm -p 8080:8080 static-web-site
 ```
 
-**Building an s2i images using OpenShift***
+**Building an s2i images using OpenShift**
 ```
 oc new-build --name simple-http-server --strategy=docker \
   --code https://github.com/tosin2013/simple-http-server
@@ -58,7 +58,7 @@ oc start-build simple-http-server
 oc new-app simple-http-server~https://github.com/BlackrockDigital/startbootstrap-landing-page
 ```
 
-**Import an s2i images using OpenShift***
+**Import an s2i images using OpenShift**
 ```
 oc import-image openshiftkatacoda/simple-http-server --confirm
 oc new-app simple-http-server~https://github.com/BlackrockDigital/startbootstrap-landing-page

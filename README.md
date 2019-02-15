@@ -30,7 +30,7 @@ oc get pods | grep nodejs
 oc delete all --selector app=nodejs-ex
 ```
 ### Source to Image builds
-[Source-to-Image Builders]()
+[Source-to-Image Builders](https://github.com/tosin2013/openshift-demos/blob/master/source-to-image-demo.md)
 
 ### Source to Image builds, with webhook triggers for builds
 [Source-to-Image Builders with web hooks]()
