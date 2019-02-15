@@ -1,6 +1,9 @@
 # Using ConfigMaps
 **Login to OpenShift**
 ```
+# in standard openshift deployment  
+oc login -u your_username
+# in minishift
 oc login -u developer
 ```
 
