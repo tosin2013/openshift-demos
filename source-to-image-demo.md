@@ -69,3 +69,6 @@ oc new-app simple-http-server~https://github.com/BlackrockDigital/startbootstrap
 ```
 oc delete all --selector app=startbootstrap-landing-page
 ```
+
+**Links:**
+[Deploying Applications from Images in OpenShift, Part One: Web Console](https://blog.openshift.com/deploying-applications-from-images-in-openshift-part-one-web-console/)

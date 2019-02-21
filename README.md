@@ -29,6 +29,16 @@ oc scale dc nodejs-ex --replicas=1
 oc get pods | grep nodejs
 oc delete all --selector app=nodejs-ex
 ```
+
+## OpenShift Autoscaling
+```
+oc new-app https://github.com/sclorg/nodejs-ex
+oc get pods  | grep nodejs
+oc expose svc/nodejs-ex
+oc autoscale dc/nodejs-ex --min 1 --max 5 --cpu-percent=40
+run ab or siege 
+```
+
 ### Source to Image builds
 [Source-to-Image Builders](https://github.com/tosin2013/openshift-demos/blob/master/source-to-image-demo.md)
 
@@ -70,6 +80,9 @@ cd codeready-workspaces-operator-installer/
 #optional: Modify config.yaml
 ./deploy.sh  --deploy config.yaml --project=your-project
 ```
+
+### Resource Quotas and Limits
+
 ## Authors
 
 * **Tosin Akinosho** - *Initial work* - [tosin2013](https://github.com/tosin2013)
