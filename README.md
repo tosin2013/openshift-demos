@@ -36,14 +36,14 @@ oc new-app https://github.com/sclorg/nodejs-ex
 oc get pods  | grep nodejs
 oc expose svc/nodejs-ex
 oc autoscale dc/nodejs-ex --min 1 --max 5 --cpu-percent=40
-run ab or siege 
+run ab or siege
 ```
 
 ### Source to Image builds
 [Source-to-Image Builders](https://github.com/tosin2013/openshift-demos/blob/master/source-to-image-demo.md)
 
 ### Source to Image builds, with webhook triggers for builds
-[Source-to-Image Builders with web hooks]()
+[Source-to-Image Builders with web hooks](https://github.com/tosin2013/openshift-demos/blob/master/source-to-image-web-hooks-demo.md)
 
 ### Build from template for two tier -- App Server and Backend
 
