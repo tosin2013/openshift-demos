@@ -5,9 +5,9 @@
 1. [Kubernetes API Mini Demo](kubernetes-api.md)
 2. [Etcd Operator Demo](kubernetes-api.md)
 3. [Openshift Operator SDK with go](openshift-sdk-with-go.md)
-4. TO-DO [Openshift Operator SDK with ansible](#)
+4. TO-DO [Openshift Operator SDK with ansible](openshift-sdk-with-ansible.md)
 5. TO-DO [Openshift Operator SDK with helm](#)
-6. TO-DO  [Operator Lifecycle Manager]()
+6. TO-DO  [Operator Lifecycle Manager](#)
 
 ## Exercises
 [Building Operators on OpenShift](https://learn.openshift.com/)  

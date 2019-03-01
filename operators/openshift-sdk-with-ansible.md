@@ -1,4 +1,4 @@
-# Operator SDK with Go (PodSet)
+# Operator SDK with Ansible - WIP
 **Start minishift cluster locally.**  
 ```
 ./start_minishift.sh
@@ -89,8 +89,9 @@ docker login -u="username" -p="password" quay.io
 **Lets build and push the app-operator image to a public registry such as quay.io**
 ```
 ENDPOINT="takinosh"
-operator-sdk build memcached-operator:v0.0.1
-docker tag memcached-operator:v0.0.1 quay.io/${ENDPOINT}/memcached-operator:v0.0.1
+$
+$ docker push quay.io/example/memcached-operator:v0.0.1
+operator-sdk build quay.io/${ENDPOINT}/memcached-operator:v0.0.1
 docker push quay.io/${ENDPOINT}/memcached-operator:v0.0.1
 ```
 
@@ -130,7 +131,7 @@ oc create -f deploy/operator.yaml --as system:admin
 
 **Create the Memcached CR.**
 ```
-oc create -f deploy/crds/cache_v1alpha1_memcached_cr.yaml
+oc create -f deploy/crds/cache_v1alpha1_memcached_cr.yaml --as system:admin
 ```
 
 cat > test.yaml <<YAML
