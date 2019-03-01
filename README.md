@@ -88,7 +88,7 @@ cd codeready-workspaces-operator-installer/
 ### Resource Quotas and Limits
 
 ### Machine Learning
-[MLFlow Tracking Server Operator](https://github.com/zmhassan/mlflow-tracking-operator)
+[MLFlow Tracking Server Operator](https://github.com/zmhassan/mlflow-tracking-operator)  
 [mlflow-example](https://github.com/zmhassan/mlflow-example)
 
 # Authors
