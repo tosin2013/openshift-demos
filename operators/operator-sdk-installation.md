@@ -70,5 +70,5 @@ go install -v github.com/operator-framework/operator-sdk/commands/operator-sdk
 operator-sdk --version
 ```
 
-#Links
-[operator-sdk](https://github.com/operator-framework/operator-sdk)
+## Links
+* [operator-sdk github](https://github.com/operator-framework/operator-sdk)
