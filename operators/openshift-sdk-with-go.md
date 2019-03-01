@@ -164,8 +164,8 @@ operator-sdk generate openapi
 oc create -f deploy/crds/app_v1alpha1_podset_cr.yaml
 ```
 **Check your Minishift cluster:**
-![Go operator Deployment ](images/go-operator-deployment.png)
-![pods](images/go-operator.png)
+![Go operator Deployment ](https://github.com/tosin2013/openshift-demos/blob/master/images/go-operator-deployment.png?raw=true)
+![pods](https://github.com/tosin2013/openshift-demos/blob/master/images/go-operator.png?raw=true)
 
 **Optional: Delete Minishift Cluster**  
 ```
