@@ -3,18 +3,21 @@
 <!-- TOC -->
 
 - [A Collection of OpenShift demos](#a-collection-of-openshift-demos)
-    - [OpenShift Scalability](#openshift-scalability)
-    - [Source to Image builds](#source-to-image-builds)
-    - [Source to Image builds, with webhook triggers for builds](#source-to-image-builds-with-webhook-triggers-for-builds)
-    - [Build from template for two tier -- App Server and Backend](#build-from-template-for-two-tier----app-server-and-backend)
-    - [Python (Django)  - PostgreSQL Backend](#python-django----postgresql-backend)
-    - [ConfigMaps](#configmaps)
-    - [Persistent Storage Using Gluster - OCS](#persistent-storage-using-gluster---ocs)
-    - [Persistent Storage Using NFS - OCS](#persistent-storage-using-nfs---ocs)
-    - [Pipelines](#pipelines)
-    - [Operators](#operators)
-    - [Code Ready Workspaces](#code-ready-workspaces)
-    - [Authors](#authors)
+  - [OpenShift Scalability](#openshift-scalability)
+  - [OpenShift Autoscaling](#openshift-autoscaling)
+  - [Source to Image builds](#source-to-image-builds)
+  - [Source to Image builds, with webhook triggers for builds](#source-to-image-builds-with-webhook-triggers-for-builds)
+  - [Build from template for two tier -- App Server and Backend](#build-from-template-for-two-tier----app-server-and-backend)
+  - [Python (Django)  - PostgreSQL Backend](#python-django----postgresql-backend)
+  - [ConfigMaps](#configmaps)
+  - [Persistent Storage Using Gluster - OCS](#persistent-storage-using-gluster---ocs)
+  - [Persistent Storage Using NFS - OCS](#persistent-storage-using-nfs---ocs)
+  - [Pipelines](#pipelines)
+  - [Operators](#operators)
+  - [Code Ready Workspaces](#code-ready-workspaces)
+  - [Resource Quotas and Limits](#resource-quotas-and-limits)
+  - [Machine Learning](#machine-learning)
+- [Authors](#authors)
 
 <!-- /TOC -->
 
@@ -30,7 +33,7 @@ oc get pods | grep nodejs
 oc delete all --selector app=nodejs-ex
 ```
 
-## OpenShift Autoscaling
+### OpenShift Autoscaling
 ```
 oc new-app https://github.com/sclorg/nodejs-ex
 oc get pods  | grep nodejs
@@ -84,6 +87,10 @@ cd codeready-workspaces-operator-installer/
 
 ### Resource Quotas and Limits
 
-## Authors
+### Machine Learning
+[MLFlow Tracking Server Operator](https://github.com/zmhassan/mlflow-tracking-operator)
+[mlflow-example](https://github.com/zmhassan/mlflow-example)
+
+# Authors
 
 * **Tosin Akinosho** - *Initial work* - [tosin2013](https://github.com/tosin2013)
