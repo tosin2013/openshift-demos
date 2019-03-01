@@ -69,6 +69,7 @@ oc create -f https://raw.githubusercontent.com/openshift/origin/master/examples/
 ```
 
 ### Operators
+[Openshift Operators][https://github.com/tosin2013/openshift-demos/blob/master/operators/README.md]
 
 ### Code Ready Workspaces
 [Download Red Hat CodeReady Workspaces](https://developers.redhat.com/products/codeready-workspaces/download/)  
