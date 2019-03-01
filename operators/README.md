@@ -46,6 +46,9 @@ minishift
 jq  
 virtualbox  
 
+## Scripts
+[start_minishift.sh](https://github.com/tosin2013/openshift-demos/blob/master/operators/start_minishift.sh)
+[delete_minishift.sh](https://github.com/tosin2013/openshift-demos/blob/master/operators/delete_minishift.sh)
 
 ## Compatible with
 * MacOS  
