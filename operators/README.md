@@ -38,7 +38,10 @@
 [Every third Friday of the month at 12pm EST](https://commons.openshift.org/sig/OpenshiftOperators.html)  
 
 ## Community Operators
-[operator-framework/community-operators](https://github.com/operator-framework/community-operators)
+[operator-framework/community-operators](https://github.com/operator-framework/community-operators)  
+
+## Operator Hub
+[OperatorHub.io](https://www.operatorhub.io/)  
 
 ## Requirements
 oc  
@@ -47,8 +50,8 @@ jq
 virtualbox  
 
 ## Scripts
-[start_minishift.sh](https://github.com/tosin2013/openshift-demos/blob/master/operators/start_minishift.sh)
-[delete_minishift.sh](https://github.com/tosin2013/openshift-demos/blob/master/operators/delete_minishift.sh)
+[start_minishift.sh](https://github.com/tosin2013/openshift-demos/blob/master/operators/start_minishift.sh)  
+[delete_minishift.sh](https://github.com/tosin2013/openshift-demos/blob/master/operators/delete_minishift.sh)  
 
 ## Compatible with
 * MacOS  
@@ -58,5 +61,5 @@ virtualbox
 
 ## Acknowledgments
 
-* **Matt Dorn** -  [madorn](https://github.com/madorn)
-* **Michael Hausenblas** -  [mhausenblas](https://github.com/mhausenblas)
+* **Matt Dorn** -  [madorn](https://github.com/madorn)  
+* **Michael Hausenblas** -  [mhausenblas](https://github.com/mhausenblas)  
