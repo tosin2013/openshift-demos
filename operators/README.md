@@ -55,6 +55,7 @@ virtualbox
 
 ## Compatible with
 * MacOS  
+* Fedora
 
 ## Author
 * **Tosin Akinosho** - *Initial work* - [tosin2013](https://github.com/tosin2013)

@@ -46,13 +46,13 @@ choco install dep
 ```
 
 ## Install the Operator SDK
-**Clone the Operator SDK (v0.2.1)**
+**Clone the Operator SDK (v0.3.0)**
 ```
-mkdir $GOPATH/src/github.com/operator-framework
+mkdir -p $GOPATH/src/github.com/operator-framework
 cd $GOPATH/src/github.com/operator-framework
 git clone https://github.com/operator-framework/operator-sdk
 cd operator-sdk
-git checkout tags/v0.2.1
+git checkout tags/v0.3.0 
 ```
 
 **Install the Operator SDK’s dependencies.**
@@ -65,7 +65,7 @@ dep ensure -v
 go install -v github.com/operator-framework/operator-sdk/commands/operator-sdk
 ```
 
-**Verify the Operator SDK was successfully installed. Verify you are on operator-sdk version v0.2.1**
+**Verify the Operator SDK was successfully installed. Verify you are on operator-sdk version v0.3.0**
 ```
 operator-sdk --version
 ```

@@ -9,10 +9,14 @@
 
 **Create a new Go-based Operator SDK project for the PodSet (PodSet )**
 ```
+export GOPATH=$HOME/go  
 export PATH=$PATH:/usr/local/bin:$GOPATH/bin
-export GOPATH=$HOME/go
 mkdir -p $GOPATH/src/github.com/redhat/
 cd $GOPATH/src/github.com/redhat/
+###
+## Confirm operator sdk v0.3.0
+## operator-sdk --version
+###
 operator-sdk new memcached-operator --api-version=cache.example.com/v1alpha1 --kind=Memcached --type=ansible
 
 ```
@@ -60,6 +64,7 @@ cat roles/dymurray.memcached_operator_role/defaults/main.yml
 cat roles/dymurray.memcached_operator_role/tasks/main.yml
 ```
 
+**Override role path to point to dymurray.memcached_operator_role**
 ```
 cat > watches.yaml <<YAML
 ---
@@ -71,16 +76,18 @@ YAML
 ```
 
 
-
+**Create memcached Custom Resource Definition (CRD)**
 ```
 oc create -f deploy/crds/cache_v1alpha1_memcached_crd.yaml --as system:admin
 
 ```
 
+**Check status of Custom Resource Definition***
 ```
 oc get crd  --as system:admin
 
 ```
+
 **Login Quay**
 ```
 docker login -u="username" -p="password" quay.io
@@ -88,12 +95,12 @@ docker login -u="username" -p="password" quay.io
 
 **Lets build and push the app-operator image to a public registry such as quay.io**
 ```
-ENDPOINT="takinosh"
-$
-$ docker push quay.io/example/memcached-operator:v0.0.1
+ENDPOINT="tosin2013"
 operator-sdk build quay.io/${ENDPOINT}/memcached-operator:v0.0.1
 docker push quay.io/${ENDPOINT}/memcached-operator:v0.0.1
 ```
+
+**Confirm quay.io repo is public**
 
 **Lets update the operator manifest to use the built image name (if you are performing these steps on OSX, see note below)**
 ```
@@ -119,14 +126,19 @@ oc create -f deploy/role.yaml --as system:admin
 oc create -f deploy/role_binding.yaml --as system:admin
 ```
 
-**In a new terminal or IE, inspect the Custom Resource manifest:**
-```
-cat deploy/crds/cache_v1alpha1_memcached_cr.yaml
-```
-
 **Deploy the app-operator**
 ```
 oc create -f deploy/operator.yaml --as system:admin
+```
+
+**Check deployment**
+```
+oc get deployment
+```
+
+**In a new terminal or IE, inspect the Custom Resource manifest:**
+```
+cat deploy/crds/cache_v1alpha1_memcached_cr.yaml
 ```
 
 **Create the Memcached CR.**
@@ -134,21 +146,10 @@ oc create -f deploy/operator.yaml --as system:admin
 oc create -f deploy/crds/cache_v1alpha1_memcached_cr.yaml --as system:admin
 ```
 
-cat > test.yaml <<YAML
-# Required because of inter namespace communication
-kind: ClusterRole
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
- name:  myproject
-rules:
-- apiGroups: ["", "extensions"]
-  resources: ["memcacheds.cache.example.com"]
-  verbs: ["get", "list"]
-YAML
-
-system:serviceaccount:myproject:memcached-operator
-
-oc adm policy add-role-to-user admin developer -n myproject
+**Check deployment**
+```
+oc get deployment
+```
 
 **Optional: Delete Minishift Cluster**  
 ```
@@ -180,8 +181,6 @@ cat > watches.yaml <<YAML
   role: ${LOCALROLEPATH}
 YAML
 ```
- oc create -f test.yaml
-
 
 **Run the operator locally with the default kubernetes config file present at $HOME/.kube/config.**
 ```
