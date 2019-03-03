@@ -1,4 +1,4 @@
-# Operator SDK with Ansible - WIP
+# Operator SDK with Ansible
 **Start minishift cluster locally.**  
 ```
 ./start_minishift.sh
@@ -150,6 +150,9 @@ oc create -f deploy/crds/cache_v1alpha1_memcached_cr.yaml --as system:admin
 ```
 oc get deployment
 ```
+
+![deployment](https://github.com/tosin2013/openshift-demos/blob/master/images/ansible-deployment.png?raw=true)
+![pods](https://github.com/tosin2013/openshift-demos/blob/master/images/ansible-pods.png?raw=true)
 
 **Optional: Delete Minishift Cluster**  
 ```
