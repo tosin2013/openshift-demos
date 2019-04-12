@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-# Operator SDK with Ansible - WIP
-
-
-https://youtu.be/Smk9oQp7YMY?t=75
-
-=======
 # Operator SDK with Ansible
->>>>>>> 9611c069735cf1c9ac0d391fb5194c32bd964109
 **Start minishift cluster locally.**  
 ```
 ./start_minishift.sh
@@ -29,55 +21,9 @@ operator-sdk new memcached-operator --api-version=cache.example.com/v1alpha1 --k
 
 ```
 
-**cd into podset directory**
+**cd into podset deirectory**
 ```
 cd memcached-operator/
-```
-
-**directory structure**
-```
-$ tree
-.
-├── README.md
-├── delete_minishift.sh
-├── etcd-operator-demo.md
-├── kubernetes-api.md
-├── memcached-operator
-│   ├── build
-│   │   └── Dockerfile
-│   ├── deploy
-│   │   ├── crds
-│   │   │   ├── cache_v1alpha1_memcached_cr.yaml
-│   │   │   └── cache_v1alpha1_memcached_crd.yaml
-│   │   ├── operator.yaml
-│   │   ├── role.yaml
-│   │   ├── role_binding.yaml
-│   │   └── service_account.yaml
-│   ├── roles
-│   │   └── Memcached
-│   │       ├── README.md
-│   │       ├── defaults
-│   │       │   └── main.yml
-│   │       ├── files
-│   │       ├── handlers
-│   │       │   └── main.yml
-│   │       ├── meta
-│   │       │   └── main.yml
-│   │       ├── tasks
-│   │       │   └── main.yml
-│   │       ├── templates
-│   │       ├── tests
-│   │       │   ├── inventory
-│   │       │   └── test.yml
-│   │       └── vars
-│   │           └── main.yml
-│   └── watches.yaml
-├── notes.md
-├── op-sdk-setup.sh
-├── openshift-sdk-with-ansible.md
-├── openshift-sdk-with-go.md
-├── operator-sdk-installation.md
-└── start_minishift.sh
 ```
 
 **Open IDE or use vim**
@@ -87,12 +33,9 @@ or
 atom .
 ```
 
- echo "size: 1" >> roles/Memcached/defaults/main.yml
- cat roles/Memcached/defaults/main.yml
-
 **Login to OpenShift as the develope**
 ```
-oc login -u system:admin
+oc login -u developer -p developer
 ```
 
 **Ensure you are using myproject**
@@ -100,46 +43,51 @@ oc login -u system:admin
 oc project myproject
 ```
 
+**Lets add a new Custom Resource Definition(CRD) API called PodSet**
+[memcached_operator_role](https://galaxy.ansible.com/dymurray/memcached_operator_role)
 ```
-oc create -f deploy/crds/cache_v1alpha1_memcached_crd.yaml
-
-```
-
-```
-oc get crd
-
+ansible-galaxy install dymurray.memcached_operator_role -p ./roles
 ```
 
-<<<<<<< HEAD
-**Setup Service Account**
-=======
+**Add a new Controller to the project that will watch and reconcile the PodSet resource**
+```
+rm -rf ./roles/Memcached
+```
+
+**Review the memcached role defaults**
+```
+cat roles/dymurray.memcached_operator_role/defaults/main.yml
+```
+
+**Review the memcached tasks**
+```
+cat roles/dymurray.memcached_operator_role/tasks/main.yml
+```
+
 **Override role path to point to dymurray.memcached_operator_role**
->>>>>>> 9611c069735cf1c9ac0d391fb5194c32bd964109
 ```
-oc create -f deploy/service_account.yaml
+cat > watches.yaml <<YAML
+---
+- version: v1alpha1
+  group: cache.example.com
+  kind: Memcached
+  role: /opt/ansible/roles/dymurray.memcached_operator_role
+YAML
 ```
 
-<<<<<<< HEAD
-**Setup RBAC**
-=======
 
 **Create memcached Custom Resource Definition (CRD)**
->>>>>>> 9611c069735cf1c9ac0d391fb5194c32bd964109
 ```
-oc create -f deploy/role.yaml
-oc create -f deploy/role_binding.yaml
+oc create -f deploy/crds/cache_v1alpha1_memcached_crd.yaml --as system:admin
+
 ```
 
-<<<<<<< HEAD
-
-=======
 **Check status of Custom Resource Definition***
 ```
 oc get crd  --as system:admin
 
 ```
 
->>>>>>> 9611c069735cf1c9ac0d391fb5194c32bd964109
 **Login Quay**
 ```
 docker login -u="username" -p="password" quay.io
@@ -147,24 +95,18 @@ docker login -u="username" -p="password" quay.io
 
 **Lets build and push the app-operator image to a public registry such as quay.io**
 ```
-<<<<<<< HEAD
-ENDPOINT="takinosh"
-operator-sdk build quay.io/${ENDPOINT}/memcached-ansible-operator:v0.0.1
-docker push quay.io/${ENDPOINT}/memcached-ansible-operator:v0.0.1
-=======
 ENDPOINT="tosin2013"
 operator-sdk build quay.io/${ENDPOINT}/memcached-operator:v0.0.1
 docker push quay.io/${ENDPOINT}/memcached-operator:v0.0.1
->>>>>>> 9611c069735cf1c9ac0d391fb5194c32bd964109
 ```
 
 **Confirm quay.io repo is public**
 
 **Lets update the operator manifest to use the built image name (if you are performing these steps on OSX, see note below)**
 ```
-sed -i 's|REPLACE_IMAGE|quay.io/'${ENDPOINT}'/memcached-ansible-operator:v0.0.1|g' deploy/operator.yaml
+sed -i 's|REPLACE_IMAGE|quay.io/${ENDPOINT}/memcached-operator:v0.0.1|g' deploy/operator.yaml
 # On OSX use:
-sed -i ""  's|REPLACE_IMAGE|quay.io/'${ENDPOINT}'/memcached-ansible-operator:v0.0.1|g' deploy/operator.yaml
+sed -i ""  's|REPLACE_IMAGE|quay.io/'${ENDPOINT}'/memcached-operator:v0.0.1|g' deploy/operator.yaml
 ```
 
 
@@ -173,13 +115,15 @@ sed -i ""  's|REPLACE_IMAGE|quay.io/'${ENDPOINT}'/memcached-ansible-operator:v0.
 grep "${ENDPOINT}/${OPERATORNAME}" deploy/operator.yaml
 ```
 
-**Deploy the app-operator**
+**Setup Service Account**
 ```
-oc create -f deploy/operator.yaml
+oc create -f deploy/service_account.yaml --as system:admin
 ```
 
+**Setup RBAC**
 ```
-oc get deployment
+oc create -f deploy/role.yaml --as system:admin
+oc create -f deploy/role_binding.yaml --as system:admin
 ```
 
 **Deploy the app-operator**
@@ -187,8 +131,6 @@ oc get deployment
 oc create -f deploy/operator.yaml --as system:admin
 ```
 
-<<<<<<< HEAD
-=======
 **Check deployment**
 ```
 oc get deployment
@@ -199,10 +141,9 @@ oc get deployment
 cat deploy/crds/cache_v1alpha1_memcached_cr.yaml
 ```
 
->>>>>>> 9611c069735cf1c9ac0d391fb5194c32bd964109
 **Create the Memcached CR.**
 ```
-oc create -f deploy/crds/cache_v1alpha1_memcached_cr.yaml
+oc create -f deploy/crds/cache_v1alpha1_memcached_cr.yaml --as system:admin
 ```
 
 **Check deployment**
