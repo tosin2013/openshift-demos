@@ -37,6 +37,9 @@
 ## OpenShift Commons - Operator Framework
 [Every third Friday of the month at 12pm EST](https://commons.openshift.org/sig/OpenshiftOperators.html)  
 
+## OpenShift Commons - Helm Operators Deep Dive - OLM for Helm People Rob Szumski
+[Helm Operators Deep Dive - OLM for Helm People Rob Szumski](https://www.youtube.com/watch?v=1on_wRY2dzQ)
+
 ## Community Operators
 [operator-framework/community-operators](https://github.com/operator-framework/community-operators)  
 

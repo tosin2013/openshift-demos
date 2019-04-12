@@ -3,6 +3,7 @@
 <!-- TOC -->
 
 - [A Collection of OpenShift demos](#a-collection-of-openshift-demos)
+  - [Installing OpenShift CLI v3.11](#installing-openshift-cli-v311)
   - [OpenShift Scalability](#openshift-scalability)
   - [OpenShift Autoscaling](#openshift-autoscaling)
   - [Source to Image builds](#source-to-image-builds)
@@ -17,9 +18,28 @@
   - [Code Ready Workspaces](#code-ready-workspaces)
   - [Resource Quotas and Limits](#resource-quotas-and-limits)
   - [Machine Learning](#machine-learning)
+  - [K-Native](#k-native)
 - [Authors](#authors)
 
 <!-- /TOC -->
+
+
+### Installing OpenShift CLI v3.11
+```
+##Linux
+curl -OL https://github.com/openshift/origin/releases/download/v3.11.0/openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz
+tar -zxvf openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz
+sudo mv openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit/oc /usr/local/bin
+chmod +x /usr/local/bion/oc
+oc version
+
+##MAC
+curl -OL https://github.com/openshift/origin/releases/download/v3.11.0/openshift-origin-client-tools-v3.11.0-0cbc58b-mac.zip
+uinzip openshift-origin-client-tools-v3.11.0-0cbc58b-mac.zip
+sudo mv openshift-origin-client-tools-v3.11.0-0cbc58b-mac/oc /usr/local/bin
+chmod +x /usr/local/bion/oc
+oc version
+```
 
 ### OpenShift Scalability
 ```
@@ -90,6 +110,11 @@ cd codeready-workspaces-operator-installer/
 ### Machine Learning
 [MLFlow Tracking Server Operator](https://github.com/zmhassan/mlflow-tracking-operator)  
 [mlflow-example](https://github.com/zmhassan/mlflow-example)
+
+### K-Native
+[Knative on an OpenShift 4.0 cluster](https://github.com/openshift-cloud-functions/Documentation/blob/master/knative-OCP-4x.md)
+[Knative Tutorial](https://redhat-developer-demos.github.io/knative-tutorial/knative-tutorial/1.0-SNAPSHOT/index.html)
+[Compile Driver](https://developers.redhat.com/coderland/serverless/)
 
 # Authors
 
