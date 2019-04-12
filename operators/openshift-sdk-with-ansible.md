@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 # Operator SDK with Ansible - WIP
 
 
 https://youtu.be/Smk9oQp7YMY?t=75
 
+=======
+# Operator SDK with Ansible
+>>>>>>> 9611c069735cf1c9ac0d391fb5194c32bd964109
 **Start minishift cluster locally.**  
 ```
 ./start_minishift.sh
@@ -13,10 +17,14 @@ https://youtu.be/Smk9oQp7YMY?t=75
 
 **Create a new Go-based Operator SDK project for the PodSet (PodSet )**
 ```
+export GOPATH=$HOME/go  
 export PATH=$PATH:/usr/local/bin:$GOPATH/bin
-export GOPATH=$HOME/go
 mkdir -p $GOPATH/src/github.com/redhat/
 cd $GOPATH/src/github.com/redhat/
+###
+## Confirm operator sdk v0.3.0
+## operator-sdk --version
+###
 operator-sdk new memcached-operator --api-version=cache.example.com/v1alpha1 --kind=Memcached --type=ansible
 
 ```
@@ -102,18 +110,36 @@ oc get crd
 
 ```
 
+<<<<<<< HEAD
 **Setup Service Account**
+=======
+**Override role path to point to dymurray.memcached_operator_role**
+>>>>>>> 9611c069735cf1c9ac0d391fb5194c32bd964109
 ```
 oc create -f deploy/service_account.yaml
 ```
 
+<<<<<<< HEAD
 **Setup RBAC**
+=======
+
+**Create memcached Custom Resource Definition (CRD)**
+>>>>>>> 9611c069735cf1c9ac0d391fb5194c32bd964109
 ```
 oc create -f deploy/role.yaml
 oc create -f deploy/role_binding.yaml
 ```
 
+<<<<<<< HEAD
 
+=======
+**Check status of Custom Resource Definition***
+```
+oc get crd  --as system:admin
+
+```
+
+>>>>>>> 9611c069735cf1c9ac0d391fb5194c32bd964109
 **Login Quay**
 ```
 docker login -u="username" -p="password" quay.io
@@ -121,10 +147,18 @@ docker login -u="username" -p="password" quay.io
 
 **Lets build and push the app-operator image to a public registry such as quay.io**
 ```
+<<<<<<< HEAD
 ENDPOINT="takinosh"
 operator-sdk build quay.io/${ENDPOINT}/memcached-ansible-operator:v0.0.1
 docker push quay.io/${ENDPOINT}/memcached-ansible-operator:v0.0.1
+=======
+ENDPOINT="tosin2013"
+operator-sdk build quay.io/${ENDPOINT}/memcached-operator:v0.0.1
+docker push quay.io/${ENDPOINT}/memcached-operator:v0.0.1
+>>>>>>> 9611c069735cf1c9ac0d391fb5194c32bd964109
 ```
+
+**Confirm quay.io repo is public**
 
 **Lets update the operator manifest to use the built image name (if you are performing these steps on OSX, see note below)**
 ```
@@ -148,31 +182,36 @@ oc create -f deploy/operator.yaml
 oc get deployment
 ```
 
+**Deploy the app-operator**
+```
+oc create -f deploy/operator.yaml --as system:admin
+```
+
+<<<<<<< HEAD
+=======
+**Check deployment**
+```
+oc get deployment
+```
+
 **In a new terminal or IE, inspect the Custom Resource manifest:**
 ```
 cat deploy/crds/cache_v1alpha1_memcached_cr.yaml
 ```
 
+>>>>>>> 9611c069735cf1c9ac0d391fb5194c32bd964109
 **Create the Memcached CR.**
 ```
 oc create -f deploy/crds/cache_v1alpha1_memcached_cr.yaml
 ```
 
-cat > test.yaml <<YAML
-# Required because of inter namespace communication
-kind: ClusterRole
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
- name:  myproject
-rules:
-- apiGroups: ["", "extensions"]
-  resources: ["memcacheds.cache.example.com"]
-  verbs: ["get", "list"]
-YAML
+**Check deployment**
+```
+oc get deployment
+```
 
-system:serviceaccount:myproject:memcached-operator
-
-oc adm policy add-role-to-user admin developer -n myproject
+![deployment](https://github.com/tosin2013/openshift-demos/blob/master/images/ansible-deployment.png?raw=true)
+![pods](https://github.com/tosin2013/openshift-demos/blob/master/images/ansible-pods.png?raw=true)
 
 **Optional: Delete Minishift Cluster**  
 ```
@@ -204,8 +243,6 @@ cat > watches.yaml <<YAML
   role: ${LOCALROLEPATH}
 YAML
 ```
- oc create -f test.yaml
-
 
 **Run the operator locally with the default kubernetes config file present at $HOME/.kube/config.**
 ```

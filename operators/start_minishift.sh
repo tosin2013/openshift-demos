@@ -4,6 +4,7 @@
 echo "Launching minishift"
 minishift profile set operators
 minishift config set cpus 4
+# Works with 4096 
 minishift config set memory 8192
 
 minishift config set vm-driver virtualbox
