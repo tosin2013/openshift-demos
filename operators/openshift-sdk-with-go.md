@@ -24,7 +24,7 @@ mkdir -p $GOPATH/src/github.com/redhat/
 cd $GOPATH/src/github.com/redhat/
 operator-sdk new podset-operator --type=go #--skip-git-init
 ```
-**cd into podset deirectory**
+**cd into podset directory**
 ```
 cd podset-operator/
 ```
