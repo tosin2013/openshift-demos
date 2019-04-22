@@ -1,5 +1,5 @@
 # Operator SDK with Ansible
-**Start minishift cluster locally.**  
+**Start Minishift cluster locally.**  
 ```
 ./start_minishift.sh
 ```
@@ -21,7 +21,7 @@ operator-sdk new memcached-operator --api-version=cache.example.com/v1alpha1 --k
 
 ```
 
-**cd into podset deirectory**
+**cd into podset directory**
 ```
 cd memcached-operator/
 ```
