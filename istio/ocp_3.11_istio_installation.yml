@@ -49,4 +49,8 @@ spec:
         user: admin
         passphrase: admin
     tracing:
-      enabled: true
+        enabled: false
+        jaeger:
+          tag: 1.13.1
+          template: all-in-one
+          agentStrategy: DaemonSet
