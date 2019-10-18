@@ -41,6 +41,26 @@ chmod +x /usr/local/bion/oc
 oc version
 ```
 
+### OpenShift Project Creation
+```
+oc new-project "example-project" \
+  --description="Example  Description" \
+  --display-name="example-project"
+```
+
+###  OpenShift User Creation
+```
+oc create user sample-user
+```
+### Update users password
+```
+htpasswd </path/to/users.htpasswd> sample-user
+```
+## Remove user from OpenShift
+```
+htpasswd -D </path/to/users.htpasswd> sample-user
+```
+
 ### OpenShift Scalability
 ```
 oc new-app https://github.com/sclorg/nodejs-ex
