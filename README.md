@@ -78,8 +78,11 @@ oc delete all --selector app=nodejs-ex
 oc new-app https://github.com/sclorg/nodejs-ex
 oc get pods  | grep nodejs
 oc expose svc/nodejs-ex
-oc autoscale dc/nodejs-ex --min 1 --max 5 --cpu-percent=40
-run ab or siege
+oc autoscale dc/nodejs-ex --min 1 --max 5 --cpu-percent=10
+oc set resources  dc/nodejs-ex --requests=cpu=200m,memory=256Mi --limits=cpu=400m,memory=512Mi
+
+run siege
+siege -r 3000 -c 50 http://urlendpoint
 ```
 
 ### Source to Image builds
