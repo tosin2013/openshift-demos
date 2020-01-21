@@ -87,7 +87,7 @@ oc create user sample-user
 ```
 htpasswd </path/to/users.htpasswd> sample-user
 ```
-## Remove user from OpenShift
+### Remove user from OpenShift
 ```
 htpasswd -D </path/to/users.htpasswd> sample-user
 ```
@@ -158,15 +158,15 @@ cd codeready-workspaces-operator-installer/
 ```
 
 ### Resource Quotas and Limits
-[Resource Quotas and Limits](openshift-features/quotas-limits.md)
+[Resource Quotas and Limits](openshift-features/quotas-limits.md)  
 
 ### Machine Learning
 [MLFlow Tracking Server Operator](https://github.com/zmhassan/mlflow-tracking-operator)  
-[mlflow-example](https://github.com/zmhassan/mlflow-example)
+[mlflow-example](https://github.com/zmhassan/mlflow-example)  
 
 ### Red Hat Service mesh
-[Service Mesh  Deployment On OCP4](istio/deploying-isitio-bookinfo-app-on-openshift-4.2.md)
-[Deploying Istio bookinfo app on OpenShift 4.2](istio/deploying-isitio-bookinfo-app-on-openshift-4.2.md)
+[Service Mesh  Deployment On OCP4](istio/deploying-isitio-bookinfo-app-on-openshift-4.2.md)  
+[Deploying Istio bookinfo app on OpenShift 4.2](istio/deploying-isitio-bookinfo-app-on-openshift-4.2.md)  
 
 ### K-Native
 [Deploy Serverless Applications on Openshift 4.2](serverless/deploy-serverless-applications-on-openshift-4.2.md)  
