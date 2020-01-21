@@ -154,7 +154,7 @@ cd codeready-workspaces-operator-installer/
 ```
 
 ### Resource Quotas and Limits
-[Resource Quotas and Limits](quotas-limits.md)
+[Resource Quotas and Limits](openshift-features/quotas-limits.md)
 
 ### Machine Learning
 [MLFlow Tracking Server Operator](https://github.com/zmhassan/mlflow-tracking-operator)  
