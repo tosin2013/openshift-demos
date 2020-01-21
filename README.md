@@ -3,7 +3,7 @@
 <!-- TOC -->
 
 - [A Collection of OpenShift demos](#a-collection-of-openshift-demos)
-  - [Installing OpenShift CLI v3.11](#installing-openshift-cli-v4.x)
+  - [Installing OpenShift CLI v4.x.x](#installing-openshift-cli-v4.x)
   - [Installing OpenShift CLI v3.11](#installing-openshift-cli-v311)
   - [OpenShift Scalability](#openshift-scalability)
   - [OpenShift Autoscaling](#openshift-autoscaling)
