@@ -137,7 +137,7 @@ The following is a list of the pipeline samples available in container-pipelines
 * [Secure Spring Boot](https://github.com/redhat-cop/container-pipelines/tree/master/secure-spring-boot) - Build a Spring Boot app and deploy with a pipeline that includes code coverage reports, dependency scanning, sonarqube analysis
 * [Cross Cluster Promotion Pipeline](https://github.com/redhat-cop/container-pipelines/tree/master/multi-cluster-spring-boot) - A declarative syntax pipeline that demonstrates promoting a microservice between clusters (i.e. a Non-Production to a Production cluster)
 
-**Link:** https://github.com/redhat-cop/container-pipelines
+**Link:** [https://github.com/redhat-cop/container-pipelines](https://github.com/redhat-cop/container-pipelines)
 
 ### Operators
 [Openshift Operators](https://github.com/tosin2013/openshift-demos/blob/master/operators/README.md)
@@ -160,8 +160,13 @@ cd codeready-workspaces-operator-installer/
 [MLFlow Tracking Server Operator](https://github.com/zmhassan/mlflow-tracking-operator)  
 [mlflow-example](https://github.com/zmhassan/mlflow-example)
 
+### Red Hat Service mesh
+[Service Mesh  Deployment On OCP4](istio/deploying-isitio-bookinfo-app-on-openshift-4.2.md)
+[Deploying Istio bookinfo app on OpenShift 4.2](istio/deploying-isitio-bookinfo-app-on-openshift-4.2.md)
+
 ### K-Native
-[Knative on an OpenShift 4.0 cluster](https://github.com/openshift-cloud-functions/Documentation/blob/master/knative-OCP-4x.md)  
+[Deploy Serverless Applications on Openshift 4.2](serverless/deploy-serverless-applications-on-openshift-4.2.md)  
+[Knative CLI Demo On OpenShift 4.2](serverless/knative-cli-demo-on-openshift-4.2.md)  
 [Knative Tutorial](https://redhat-developer-demos.github.io/knative-tutorial/knative-tutorial/1.0-SNAPSHOT/index.html)  
 [Compile Driver](https://developers.redhat.com/coderland/serverless/)
 

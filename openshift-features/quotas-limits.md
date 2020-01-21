@@ -16,10 +16,12 @@ oc new-project quota-limit-demo
 oc project myproject
 ```
 
-takinosh-mac:openshift-demos takinosh$  oc get quota -n quota-limit-demo
+**See that quota limits do not exisit in project**
+```
+$  oc get quota -n quota-limit-demo
 No resources found.
-takinosh-mac:openshift-demos takinosh$  oc describe quota core-object-counts -n quota-limit-demo
-Error from server (NotFound): resourcequotas "core-object-counts" not found
+$  oc describe quota core-object-counts -n quota-limit-demo
+```
 
 ## Set limits As administrator
 ```
