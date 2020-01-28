@@ -1,4 +1,4 @@
-# Deploying Isitio bookinfo app on OpenShift 4.2
+# Deploying Istio bookinfo app on OpenShift 4.2
 
 The Bookinfo application consists of the following microservices:
 * The productpage microservice calls the details and reviews microservices to populate the page.
@@ -38,7 +38,7 @@ $ oc apply -n bookinfo -f https://raw.githubusercontent.com/Maistra/bookinfo/mai
 $ export GATEWAY_URL=$(oc -n istio-system get route istio-ingressgateway -o jsonpath='{.spec.host}')
 ```
 
-**Add default destination rules**
+**Add default destination rules**  
 *when mutual TLS is disabled*
 ```
 $ oc apply -n bookinfo -f https://raw.githubusercontent.com/istio/istio/release-1.1/samples/bookinfo/networking/destination-rule-all.yaml

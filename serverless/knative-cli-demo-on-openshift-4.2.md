@@ -58,7 +58,7 @@ while true; do sleep 1; curl $TESTURL; echo -e '\n\n\n\n'$(date) hit CTRL-c to s
 ```
 kn service update echo --concurrency-limit=0
 ```
-**Set a deoloyment revision**
+**Set a deployment revision**
 ```
 kn service update echo --revision-name echo-v1
 curl -s  $TESTURL
