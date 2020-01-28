@@ -179,7 +179,7 @@ cd codeready-workspaces-operator-installer/
 
 ## Videos
 *Knative + Kafka + Quarkus demo.*  
-{%youtube xaq7n54FRdw %}  
+[![Alt text](https://img.youtube.com/vi/VID/0.jpg)](https://www.youtube.com/watch?v=y3r78FX6U3E)
 [Knative + Kafka + Quarkus demo.](https://github.com/burrsutter/knative-kafka)  
 
 # Authors
