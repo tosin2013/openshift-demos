@@ -9,24 +9,25 @@
   - [OpenShift User Creation](#openshift-user-creation)
   - [Update users password](#update-users-password)
   - [Remove user from OpenShift](#remove-user-from-openshift)
-    - [OpenShift Scalability](#openshift-scalability)
-    - [OpenShift Autoscaling](#openshift-autoscaling)
-    - [Source to Image builds](#source-to-image-builds)
-    - [Source to Image builds, with webhook triggers for builds](#source-to-image-builds-with-webhook-triggers-for-builds)
-    - [Build from template for two tier -- App Server and Backend](#build-from-template-for-two-tier----app-server-and-backend)
-    - [Python (Django)  - PostgreSQL Backend](#python-django----postgresql-backend)
-    - [ConfigMaps](#configmaps)
-    - [Persistent Storage Using NFS - OCS](#persistent-storage-using-nfs---ocs)
-    - [Pipelines](#pipelines)
-    - [Operators](#operators)
-    - [Code Ready Workspaces](#code-ready-workspaces)
-    - [Resource Quotas and Limits](#resource-quotas-and-limits)
-    - [Machine Learning](#machine-learning)
-    - [Red Hat Service mesh](#red-hat-service-mesh)
-    - [K-Native](#k-native)
+  - [OpenShift Scalability](#openshift-scalability)
+  - [OpenShift Autoscaling](#openshift-autoscaling)
+  - [Source to Image builds](#source-to-image-builds)
+  - [Source to Image builds, with webhook triggers for builds](#source-to-image-builds-with-webhook-triggers-for-builds)
+  - [Build from template for two tier -- App Server and Backend](#build-from-template-for-two-tier----app-server-and-backend)
+  - [Python (Django)  - PostgreSQL Backend](#python-django----postgresql-backend)
+  - [ConfigMaps](#configmaps)
+  - [Persistent Storage Using NFS - OCS](#persistent-storage-using-nfs---ocs)
+  - [Pipelines](#pipelines)
+  - [Operators](#operators)
+  - [Code Ready Workspaces](#code-ready-workspaces)
+  - [Resource Quotas and Limits](#resource-quotas-and-limits)
+  - [Machine Learning](#machine-learning)
+  - [Red Hat Service mesh](#red-hat-service-mesh)
+  - [K-Native](#k-native)
 - [Authors](#authors)
 
 <!-- /TOC -->
+
 
 ### Installing OpenShift CLI v4.x
 ```
@@ -173,6 +174,13 @@ cd codeready-workspaces-operator-installer/
 [Knative CLI Demo On OpenShift 4.2](serverless/knative-cli-demo-on-openshift-4.2.md)  
 [Knative Tutorial](https://redhat-developer-demos.github.io/knative-tutorial/knative-tutorial/1.0-SNAPSHOT/index.html)  
 [Compile Driver](https://developers.redhat.com/coderland/serverless/)
+[Knative + Kafka + Quarkus demo.](https://github.com/burrsutter/knative-kafka)
+
+
+## Videos
+*Knative + Kafka + Quarkus demo.*
+{%youtube xaq7n54FRdw %}
+[Knative + Kafka + Quarkus demo.](https://github.com/burrsutter/knative-kafka)
 
 # Authors
 
