@@ -1,4 +1,4 @@
-# Deploying Istio bookinfo app on OpenShift 4.2
+# Deploying  Secure Istio bookinfo app on OpenShift 4
 
 The Bookinfo application consists of the following microservices:
 * The productpage microservice calls the details and reviews microservices to populate the page.
@@ -18,6 +18,13 @@ There are three versions of the reviews microservice:
 $ oc new-project bookinfo
 ```
 
+$ oc adm policy add-scc-to-group privileged system:serviceaccounts:bookinfo
+$ oc adm policy add-scc-to-group anyuid system:serviceaccounts:bookinfo
+
+```
+$ oc label namespace bookinfo istio-injection=enabled
+```
+
 **Add the bookinfo project to the ServiceMeshMemberRoll**
 ```
 $ oc -n istio-system patch --type='json' smmr default -p '[{"op": "add", "path": "/spec/members", "value":["'"bookinfo"'"]}]'
@@ -25,12 +32,54 @@ $ oc -n istio-system patch --type='json' smmr default -p '[{"op": "add", "path":
 
 **Deploy the Bookinfo application in the `bookinfo` project by applying the bookinfo.yaml**
 ```
-$ oc apply -n bookinfo -f https://raw.githubusercontent.com/Maistra/bookinfo/maistra-1.0/bookinfo.yaml
+$ oc apply -n bookinfo -f https://raw.githubusercontent.com/Maistra/bookinfo/maistra-1.1/bookinfo.yaml
 ```
 
-**Create the ingress gateway by applying the bookinfo-gateway.yaml**
+**Create the ingress gateway using port 443 by applying the bookinfo-gateway.yaml using Secure Gateways (File Mount)**
 ```
-$ oc apply -n bookinfo -f https://raw.githubusercontent.com/Maistra/bookinfo/maistra-1.0/bookinfo-gateway.yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: bookinfo-gateway
+spec:
+ selector:
+   istio: ingressgateway
+ servers:
+ - port:
+     number: 443
+     name: https
+     protocol: HTTPS
+   tls:
+     mode: SIMPLE
+     serverCertificate: /etc/istio/ingressgateway-certs/tls.crt
+     privateKey: /etc/istio/ingressgateway-certs/tls.key 
+   hosts:     
+   - "*.apps.ocp4.tosins-tower-demo.com"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+ name: bookinfo
+spec:
+ hosts:
+ - "*.apps.ocp4.tosins-tower-demo.com"
+ gateways:
+ - bookinfo-gateway
+ http:
+ - match:
+   - uri:
+       exact: /productpage
+   - uri:
+       exact: /login
+   - uri:
+       exact: /logout
+   - uri:
+       prefix: /api/v1/products
+   route:
+   - destination:
+       host: productpage
+       port:
+        number: 9080
 ```
 
 **Set the value for the GATEWAY_URL variable**
@@ -44,10 +93,14 @@ $ export GATEWAY_URL=$(oc -n istio-system get route istio-ingressgateway -o json
 $ oc apply -n bookinfo -f https://raw.githubusercontent.com/istio/istio/release-1.1/samples/bookinfo/networking/destination-rule-all.yaml
 ```
 
-*when mutual TLS is disabled*
+*when mutual TLS is enabled*
 ```
 $ oc apply -n bookinfo -f https://raw.githubusercontent.com/istio/istio/release-1.1/samples/bookinfo/networking/destination-rule-all-mtls.yaml
 ```
+
+ oc create  route passthrough bookinfo --service=istio-ingressgateway  --insecure-policy=Redirect --port https  -n istio-system
+
+Get Endpoint
 
 **Validate Deployment**
 ```

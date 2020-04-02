@@ -1,7 +1,7 @@
 # Service Mesh  Deployment On OCP4
 
 ## Requirements
-Install OpenShift 4.2
+Install OpenShift 4
 
 ## Required Operators
 Elasticsearch - Based on the open source Elasticsearch project that enables you to configure and manage an Elasticsearch cluster for tracing and logging with Jaeger.
@@ -18,7 +18,7 @@ Kiali - based on the open source Kiali project, provides observability for your 
 4. Click the Elasticsearch Operator to display information about the Operator.
 5. Click Install.
 6. On the Create Operator Subscription page, select All namespaces on the cluster (default). This installs the Operator in the default openshift-operators project and makes the Operator available to all projects in the cluster.
-7. Select the preview Update Channel.
+7. Select the *preview* Update Channel.
 8. Select the Automatic Approval Strategy.
 9. The Manual approval strategy requires a user with appropriate credentials to approve the Operator install and subscription process.
 10. Click Subscribe.
@@ -32,7 +32,7 @@ Kiali - based on the open source Kiali project, provides observability for your 
 4. Click the Jaeger Operator provided by Red Hat to display information about the Operator.
 5. Click Install.
 6. On the Create Operator Subscription page, select All namespaces on the cluster (default). This installs the Operator in the default openshift-operators project and makes the Operator available to all projects in the cluster.
-7. Select the stable Update Channel.
+7. Select the *stable* Update Channel.
 8. Select the Automatic Approval Strategy.
 9. The Manual approval strategy requires a user with appropriate credentials to approve the Operator install and subscription process.
 10. Click Subscribe.
@@ -45,14 +45,14 @@ Kiali - based on the open source Kiali project, provides observability for your 
 4. Click the Kiali Operator provided by Red Hat to display information about the Operator.
 5. Click Install.
 6. On the Create Operator Subscription page, select All namespaces on the cluster (default). This installs the Operator in the default openshift-operators project and makes the Operator available to all projects in the cluster.
-7. Select the stable Update Channel.
+7. Select the *stable* Update Channel.
 8. Select the Automatic Approval Strategy.
 
 ### Install the Red Hat OpenShift Service Mesh Operator
 **Prerequisites**
 * Access to the OpenShift Container Platform web console.
 * The Elasticsearch Operator must be installed.
-* The Jaeger Operator must be installedn next.
+* The Jaeger Operator must be installed next.
 * Finally  Kiali Operator must be installed.
 
 **Process**
@@ -78,8 +78,11 @@ Create a new project named istio-system.
 $ oc new-project istio-system
 ```
 
-Example istio-installation.yaml
+Example istio-installation.yaml  
+*set mtls: to  true to enable*
 ```
+vim istio-installation.yaml
+
 apiVersion: maistra.io/v1
 kind: ServiceMeshControlPlane
 metadata:
@@ -96,6 +99,8 @@ spec:
           limits:
             cpu: 500m
             memory: 128Mi
+      mtls:
+        enabled: false
 
     gateways:
       istio-egressgateway:
@@ -160,6 +165,8 @@ Create a member role for ServiceMesh.
 
 Example servicemeshmemberroll.yaml
 ```
+vim  servicemeshmemberroll.yaml
+
 apiVersion: maistra.io/v1
 kind: ServiceMeshMemberRoll
 metadata:
