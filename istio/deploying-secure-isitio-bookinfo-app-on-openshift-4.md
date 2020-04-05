@@ -30,13 +30,46 @@ $ oc label namespace bookinfo istio-injection=enabled
 $ oc -n istio-system patch --type='json' smmr default -p '[{"op": "add", "path": "/spec/members", "value":["'"bookinfo"'"]}]'
 ```
 
+**Add destination rule for mtls**
+```
+apiVersion: "networking.istio.io/v1alpha3"
+kind: "DestinationRule"
+metadata:
+  name: "default"
+  namespace: bookinfo
+spec:
+  host: "*.local"
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL
+```
+
 **Deploy the Bookinfo application in the `bookinfo` project by applying the bookinfo.yaml**
 ```
-$ oc apply -n bookinfo -f https://raw.githubusercontent.com/Maistra/bookinfo/maistra-1.1/bookinfo.yaml
+$ oc apply -n bookinfo -f https://raw.githubusercontent.com/tosin2013/openshift-demos/master/istio/templates/bookinfo.yaml
 ```
+
+**Test Deployment**
+```
+$ oc get pods
+```
+
+```
+$ oc exec jsonpath='{.items[0].metadata.name}') -c ratings -- curl productpage:9080/productpage | grep -o "<title>.*</title>"
+<title>Simple Bookstore App</title>
+```
+**Adding destination rule for all mtls**
+```
+$ oc create -f https://raw.githubusercontent.com/tosin2013/openshift-demos/master/istio/templates/destination-rule-all-mtls.yaml
+```
+
+**Follow the cert creation steps found in link below**  
+[Secure Gateways (File Mount) On OpenShift Isito](secure-gateways-on-openshift-isito.md)  
 
 **Create the ingress gateway using port 443 by applying the bookinfo-gateway.yaml using Secure Gateways (File Mount)**
 ```
+vi bookinfo-secure-gateway.yml
+
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
@@ -54,7 +87,7 @@ spec:
      serverCertificate: /etc/istio/ingressgateway-certs/tls.crt
      privateKey: /etc/istio/ingressgateway-certs/tls.key 
    hosts:     
-   - "*.apps.ocp4.tosins-tower-demo.com"
+   - "*.apps.ocp4.example.com"
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
@@ -62,7 +95,7 @@ metadata:
  name: bookinfo
 spec:
  hosts:
- - "*.apps.ocp4.tosins-tower-demo.com"
+ - "*.apps.ocp4.example.com"
  gateways:
  - bookinfo-gateway
  http:
@@ -82,39 +115,29 @@ spec:
         number: 9080
 ```
 
+**Create Secure Route**
+```
+$ oc create  route passthrough bookinfo --service=istio-ingressgateway  --insecure-policy=Redirect --port https  -n istio-system
+```
+
 **Set the value for the GATEWAY_URL variable**
 ```
-$ export GATEWAY_URL=$(oc -n istio-system get route istio-ingressgateway -o jsonpath='{.spec.host}')
+$ export GATEWAY_URL=$(oc -n istio-system get route bookinfo -o jsonpath='{.spec.host}')
 ```
-
-**Add default destination rules**  
-*when mutual TLS is disabled*
-```
-$ oc apply -n bookinfo -f https://raw.githubusercontent.com/istio/istio/release-1.1/samples/bookinfo/networking/destination-rule-all.yaml
-```
-
-*when mutual TLS is enabled*
-```
-$ oc apply -n bookinfo -f https://raw.githubusercontent.com/istio/istio/release-1.1/samples/bookinfo/networking/destination-rule-all-mtls.yaml
-```
-
- oc create  route passthrough bookinfo --service=istio-ingressgateway  --insecure-policy=Redirect --port https  -n istio-system
-
-Get Endpoint
 
 **Validate Deployment**
 ```
-curl -o /dev/null -s -w "%{http_code}\n" http://$GATEWAY_URL/productpage
+$ curl -o /dev/null -s -w "%{http_code}\n" https://$GATEWAY_URL/productpage -k
 ```
 
-*Or navigate to  `http://$GATEWAYURL/productpage` in your browser.*
+*Or navigate to  `https://$GATEWAYURL/productpage` in your browser.*
 ```
-echo http://$GATEWAY_URL/productpage
+$ echo https://$GATEWAY_URL/productpage
 ```
 
 **You can now open tools like kiali**
 
 ## Links:
-[Deploying applications on Red Hat OpenShift Service Mesh](https://docs.openshift.com/container-platform/4.2/service_mesh/service_mesh_day_two/prepare-to-deploy-applications-ossm.html)
-[Kiali tutorial](https://docs.openshift.com/container-platform/4.2/service_mesh/service_mesh_day_two/ossm-tutorial-kiali.html)
-[Distributed tracing tutorial](https://docs.openshift.com/container-platform/4.2/service_mesh/service_mesh_day_two/ossm-tutorial-jaeger-tracing.html)
+[Deploying applications on Red Hat OpenShift Service Mesh](https://docs.openshift.com/container-platform/4.3/service_mesh/service_mesh_day_two/prepare-to-deploy-applications-ossm.html)  
+[Kiali tutorial](https://docs.openshift.com/container-platform/4.3/service_mesh/service_mesh_day_two/ossm-tutorial-kiali.html)  
+[Distributed tracing tutorial](https://docs.openshift.com/container-platform/4.3/service_mesh/service_mesh_day_two/ossm-tutorial-jaeger-tracing.html)  

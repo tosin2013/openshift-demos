@@ -183,4 +183,4 @@ oc create -n istio-system -f servicemeshmemberroll.yaml
 ```
 
 ### Links:
-[Offical Documentation](https://docs.openshift.com/container-platform/4.2/service_mesh/service_mesh_install/installing-ossm.html)
+[Offical Documentation](https://docs.openshift.com/container-platform/4.3/service_mesh/service_mesh_install/installing-ossm.html)

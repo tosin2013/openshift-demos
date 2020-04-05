@@ -96,6 +96,6 @@ echo http://$GATEWAY_URL/productpage
 **You can now open tools like kiali**
 
 ## Links:
-* [Deploying applications on Red Hat OpenShift Service Mesh](https://docs.openshift.com/container-platform/4.2/service_mesh/service_mesh_day_two/prepare-to-deploy-applications-ossm.html)
-* [Kiali tutorial](https://docs.openshift.com/container-platform/4.2/service_mesh/service_mesh_day_two/ossm-tutorial-kiali.html)
-* [Distributed tracing tutorial](https://docs.openshift.com/container-platform/4.2/service_mesh/service_mesh_day_two/ossm-tutorial-jaeger-tracing.html)
+* [Deploying applications on Red Hat OpenShift Service Mesh](https://docs.openshift.com/container-platform/4.2/service_mesh/service_mesh_day_two/prepare-to-deploy-applications-ossm.html)  
+* [Kiali tutorial](https://docs.openshift.com/container-platform/4.2/service_mesh/service_mesh_day_two/ossm-tutorial-kiali.html)  
+* [Distributed tracing tutorial](https://docs.openshift.com/container-platform/4.2/service_mesh/service_mesh_day_two/ossm-tutorial-jaeger-tracing.html)  
