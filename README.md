@@ -31,14 +31,11 @@
 
 ### Installing OpenShift CLI v4.x
 ```
-### Set OpenShift Version
-VERSION=4.x.x #changeme
-
 ##Linux
-curl -OL https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux-$VERSION.tar.gz
-tar -zxvf openshift-client-linux-$VERSION.tar.gz
-sudo mv oc /usr/local/bin
-sudo mv kubectl /usr/local/bin
+curl -OL https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz
+tar -zxvf openshift-client-linux.tar.gz
+mv oc /usr/local/bin
+mv kubectl /usr/local/bin
 chmod +x /usr/local/bin/oc
 chmod +x /usr/local/bin/kubectl
 oc version
