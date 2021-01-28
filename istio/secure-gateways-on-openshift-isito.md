@@ -9,6 +9,10 @@ When secure routing is enabled in the isito cluster you will display a lock in t
 ![](https://i.imgur.com/3OKIp9L.png)
 
 
+## Generate key or run script found 
+* templates/scripts/openssl-generator.sh
+
+## Manual Key  Generation
 ### Set DOMAIN
 ```
 export BASE_DOMAIN="apps.ocp.example.com"

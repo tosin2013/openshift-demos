@@ -78,7 +78,40 @@ Create a new project named istio-system.
 $ oc new-project istio-system
 ```
 
-Example istio-installation.yaml  
+Example istio-installation.yaml v2
+```
+vim istio-installation.yaml
+
+apiVersion: maistra.io/v2
+kind: ServiceMeshControlPlane
+metadata:
+  name: full
+spec:
+  version: v2.0
+  security:
+    controlPlane:
+      mtls: true
+  tracing:
+    # change to None to disable tracing
+    type: Jaeger
+  addons:
+    jaeger:
+      name: jaeger
+      # we want maistra to create the jaeger resource
+      install: {}
+    grafana:
+      enabled: true
+      install: {}
+    kiali:
+      name: kiali
+      enabled: true
+      # we want maistra to create the kiali resource
+      install: {}
+    prometheus:
+      enabled: true
+```
+
+Example istio-installation.yaml v1
 *set mtls: to  true to enable*
 ```
 vim istio-installation.yaml
