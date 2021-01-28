@@ -10,7 +10,7 @@ When secure routing is enabled in the isito cluster you will display a lock in t
 
 
 ## Generate key or run script found 
-* templates/scripts/openssl-generator.sh
+* [openssl-generator.sh](templates/scripts/openssl-generator.sh])
 
 ## Manual Key  Generation
 ### Set DOMAIN
