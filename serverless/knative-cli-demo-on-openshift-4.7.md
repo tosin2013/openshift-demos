@@ -1,19 +1,19 @@
-# Knative CLI Demo On OpenShift 4.2
+# Knative CLI Demo On OpenShift 4.7
 
 ## Requirements:
 * install the kn cli
 
 ### Install kn cli on linux
 ```
-wget https://mirror.openshift.com/pub/openshift-v4/clients/serverless/latest/kn-linux-amd64-0.10.0.tar.gz
-tar -zxvf kn-linux-amd64-0.10.0.tar.gz
+wget https://mirror.openshift.com/pub/openshift-v4/clients/serverless/latest/kn-linux-amd64.tar.gz
+tar -zxvf kn-linux-amd64.tar.gz
 chmod +x kn
 sudo mv kn /usr/local/bin/
 kn version
 ```
 
 #### For other operating systems please refer to the link below.
-[Using Knative Client](https://docs.openshift.com/container-platform/4.2/serverless/knative-client.html)
+[Using Knative Client](https://docs.openshift.com/container-platform/4.7/serverless/installing-kn.html#installing-kn)
 
 **Login to OpenShift**
 ```
@@ -29,10 +29,12 @@ oc new-project serverless-demo
 ```
 kn service list --namespace serverless-demo
 ```
+
 **Create deployment**
 ```
 kn service create echo --image tcij1013/echo:latest
 ```
+
 **Reterive URL**
 ```
 TESTURL=$(kn service list | grep echo | awk '{print $2}')
@@ -45,6 +47,7 @@ curl -s $TESTURL
 ```
 
 **Configure concurrency limits on deployment**
+> Concurrency is nothing more than the number of requests a system can service at any given time and is normally driven by a fixed resource such as CPU.
 ```
 kn service update echo --concurrency-limit=1
 ```
@@ -86,5 +89,5 @@ kn service delete echo
 ```
 
 Links:
-[Knative Tutorial](https://redhat-developer-demos.github.io/knative-tutorial/knative-tutorial/0.7.x/index.html)
-[Using Knative Client](https://docs.openshift.com/container-platform/4.2/serverless/knative-client.html)
+[Knative Tutorial](https://redhat-developer-demos.github.io/knative-tutorial/knative-tutorial/index.html)
+[Knative CLI (kn) for use with OpenShift Serverless](https://docs.openshift.com/container-platform/4.7/cli_reference/kn-cli-tools.html)
