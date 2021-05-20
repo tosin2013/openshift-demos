@@ -68,6 +68,7 @@ webhook-576b57b4d6-kf5fp                                 2/2     Running     0  
 ```
 
 ## Links:
+---
 * [Knative Serving architecture](https://docs.openshift.com/container-platform/4.7/serverless/architecture/serverless-serving-architecture.html) 
 
 * [Knative Eventing architecture](https://docs.openshift.com/container-platform/4.7/serverless/architecture/serverless-event-architecture.html)  
