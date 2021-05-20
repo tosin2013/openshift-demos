@@ -68,10 +68,11 @@ webhook-576b57b4d6-kf5fp                                 2/2     Running     0  
 ```
 
 ## Links:
-[OpenShift Serverless product architecture](https://docs.openshift.com/container-platform/4.2/serverless/serverless-architecture.html)  
-[Scaling a MachineSet manually](https://docs.openshift.com/container-platform/4.2/serverless/installing-openshift-serverless.html#machineset-manually-scaling_installing-openshift-serverless)  
-[Getting started with Knative services](https://docs.openshift.com/container-platform/4.2/serverless/getting-started-knative-services.html)  
-[Monitoring OpenShift Serverless components](https://docs.openshift.com/container-platform/4.2/serverless/monitoring-serverless.html)  
-[Using metering with OpenShift Serverless](https://docs.openshift.com/container-platform/4.2/serverless/serverless-metering.html)  
-[Cluster logging with OpenShift Serverless](https://docs.openshift.com/container-platform/4.2/serverless/cluster-logging-serverless.html)  
-[Configuring Knative Serving autoscaling](https://docs.openshift.com/container-platform/4.2/serverless/configuring-knative-serving-autoscaling.html)  
+[Knative Serving architecture](https://docs.openshift.com/container-platform/4.7/serverless/architecture/serverless-serving-architecture.html)  
+[Knative Eventing architecture](https://docs.openshift.com/container-platform/4.7/serverless/architecture/serverless-event-architecture.html)  
+[Serverless applications](https://docs.openshift.com/container-platform/4.7/serverless/knative_serving/serverless-applications.html)  
+[Monitoring Knative Serving revision CPU and memory usage](https://docs.openshift.com/container-platform/4.7/serverless/monitoring/serverless-monitoring.html)  
+[Using metering with OpenShift Serverless](https://docs.openshift.com/container-platform/4.7/serverless/admin_guide/serverless-metering.html)  
+[Cluster logging with OpenShift Serverless](https://docs.openshift.com/container-platform/4.7/serverless/knative_serving/cluster-logging-serverless.html)  
+[Configuring routes for Knative services](https://docs.openshift.com/container-platform/4.7/serverless/networking/serverless-configuring-routes.html)  
+[Configuring Knative Serving autoscaling](https://docs.openshift.com/container-platform/4.7/serverless/knative_serving/configuring-knative-serving-autoscaling.html)  
