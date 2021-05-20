@@ -68,10 +68,10 @@ webhook-576b57b4d6-kf5fp                                 2/2     Running     0  
 ```
 
 ## Links:
-[OpenShift Serverless product architecture](https://docs.openshift.com/container-platform/4.2/serverless/serverless-architecture.html)
-[Scaling a MachineSet manually](https://docs.openshift.com/container-platform/4.2/serverless/installing-openshift-serverless.html#machineset-manually-scaling_installing-openshift-serverless)
-[Getting started with Knative services](https://docs.openshift.com/container-platform/4.2/serverless/getting-started-knative-services.html)
-[Monitoring OpenShift Serverless components](https://docs.openshift.com/container-platform/4.2/serverless/monitoring-serverless.html)
-[Using metering with OpenShift Serverless](https://docs.openshift.com/container-platform/4.2/serverless/serverless-metering.html)
-[Cluster logging with OpenShift Serverless](https://docs.openshift.com/container-platform/4.2/serverless/cluster-logging-serverless.html)
-[Configuring Knative Serving autoscaling](https://docs.openshift.com/container-platform/4.2/serverless/configuring-knative-serving-autoscaling.html)
+[OpenShift Serverless product architecture](https://docs.openshift.com/container-platform/4.2/serverless/serverless-architecture.html). 
+[Scaling a MachineSet manually](https://docs.openshift.com/container-platform/4.2/serverless/installing-openshift-serverless.html#machineset-manually-scaling_installing-openshift-serverless). 
+[Getting started with Knative services](https://docs.openshift.com/container-platform/4.2/serverless/getting-started-knative-services.html). 
+[Monitoring OpenShift Serverless components](https://docs.openshift.com/container-platform/4.2/serverless/monitoring-serverless.html). 
+[Using metering with OpenShift Serverless](https://docs.openshift.com/container-platform/4.2/serverless/serverless-metering.html). 
+[Cluster logging with OpenShift Serverless](https://docs.openshift.com/container-platform/4.2/serverless/cluster-logging-serverless.html). 
+[Configuring Knative Serving autoscaling](https://docs.openshift.com/container-platform/4.2/serverless/configuring-knative-serving-autoscaling.html). 
