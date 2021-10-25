@@ -10,6 +10,7 @@
   - [Update users password](#update-users-password)
   - [Remove user from OpenShift](#remove-user-from-openshift)
   - [OpenShift Scalability](#openshift-scalability)
+  - [Enabling monitoring for user-defined projects](workload-monitoring-for-user-defined-projects/README.md)
   - [OpenShift Autoscaling](#openshift-autoscaling)
   - [Source to Image builds](#source-to-image-builds)
   - [Source to Image builds, with webhook triggers for builds](#source-to-image-builds-with-webhook-triggers-for-builds)
@@ -168,6 +169,7 @@ cd codeready-workspaces-operator-installer/
 
 ### K-Native
 [Deploy Serverless Applications on Openshift 4.2](serverless/deploy-serverless-applications-on-openshift-4.2.md)  
+[Deploying  Secure Istio bookinfo app on OpenShift 4]()
 [Knative CLI Demo On OpenShift 4.2](serverless/knative-cli-demo-on-openshift-4.2.md)  
 [Knative Tutorial](https://redhat-developer-demos.github.io/knative-tutorial/knative-tutorial/1.0-SNAPSHOT/index.html)  
 [Compile Driver](https://developers.redhat.com/coderland/serverless/)
