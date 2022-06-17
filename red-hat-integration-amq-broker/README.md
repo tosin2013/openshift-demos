@@ -246,7 +246,7 @@ spec:
       type: ManagedClusterConditionAvailable
   clusterSelector:
     matchExpressions:
-      - key: purpose
+      - key: deploymentype
         operator: In
         values:
           - sno
