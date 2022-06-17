@@ -4,6 +4,14 @@
 ### Requirements
 [Set up the main configuration Application for Red Hat Advanced Cluster Management](https://hackmd.io/rKGcWPITQj6EjOE0IlCP8Q)
 
+## Screen Shots
+![20220617151949](https://i.imgur.com/CZGdJNG.png)
+**local-cluster-dc-broker-development**
+![20220617151920](https://i.imgur.com/f2Yf6UV.png)
+
+**sno-dc-broker-development**
+![20220617151553](https://i.imgur.com/GdLFxD1.png)
+
 ###  Deploy Red Hat Integration - AMQ Broker for RHEL 8 (Multiarch) on Hub Cluster
 **Create a new directory to hold the policy:**
 
