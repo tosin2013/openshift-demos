@@ -24,6 +24,14 @@ curl -o $HOME/applications/managed/dc-broker/overlays/local-cluster/dc-broker.ya
 kustomize build $HOME/applications/managed/dc-broker/overlays/local-cluster
 
 
+curl -o $HOME/applications/managed/dc-broker/overlays/converged/kustomization.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/kustomization.yaml
+curl -o $HOME/applications/managed/dc-broker/overlays/converged/dc-broker.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/converged-dc-broker.yaml
+kustomize build $HOME/applications/managed/dc-broker/overlays/converged
+
+curl -o $HOME/applications/managed/dc-broker/overlays/sno/kustomization.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/kustomization.yaml
+curl -o $HOME/applications/managed/dc-broker/overlays/sno/dc-broker.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/sno-dc-broker.yaml
+kustomize build $HOME/applications/managed/dc-broker/overlays/sno
+
 cd $HOME/applications
 git add -A
 
