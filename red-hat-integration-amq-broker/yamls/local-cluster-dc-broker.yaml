@@ -1,0 +1,55 @@
+apiVersion: broker.amq.io/v2alpha5
+kind: ActiveMQArtemis
+metadata:
+  creationTimestamp: '2022-06-16T23:45:51Z'
+  generation: 1
+  name: dc-broker
+  namespace: demo-amq-dc
+  resourceVersion: '2502243'
+  uid: 669549a1-4c51-4d39-a5c9-b92a65da7a6e
+spec:
+  acceptors:
+    - port: 5672
+      verifyHost: false
+      wantClientAuth: false
+      expose: true
+      needClientAuth: false
+      multicastPrefix: /topic/
+      name: amqp
+      sslEnabled: false
+      sniHost: localhost
+      enabledProtocols: 'TLSv1,TLSv1.1,TLSv1.2'
+      protocols: amqp
+      sslProvider: JDK
+      anycastPrefix: jms.queue.
+  adminPassword: admin
+  adminUser: admin
+  console:
+    expose: true
+  deploymentPlan:
+    size: 1
+    persistenceEnabled: true
+    requireLogin: false
+    resources:
+      limits:
+        cpu: 500m
+        memory: 1024Mi
+      requests:
+        cpu: 250m
+        memory: 512Mi
+    messageMigration: false
+    managementRBACEnabled: true
+    journalType: nio
+    enableMetricsPlugin: true
+    jolokiaAgentEnabled: false
+    image: placeholder
+    storage:
+      size: 2Gi
+  upgrades:
+    enabled: false
+    minor: false
+  version: 7.9.4
+status:
+  podStatus:
+    ready:
+      - dc-broker-ss-0
