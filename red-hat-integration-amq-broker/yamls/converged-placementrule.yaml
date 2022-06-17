@@ -1,0 +1,13 @@
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: converged-dc-broker-development
+  namespace: acm-subscriptions
+spec:
+  clusterSelector:
+    matchExpressions:
+      - key: purpose
+        operator: In
+        values:
+          - converged

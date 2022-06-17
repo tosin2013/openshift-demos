@@ -186,7 +186,7 @@ spec:
                 apiVersion: v1
                 kind: Namespace
                 metadata:
-                  name: demo-amp-pkgc
+                  name: demo-amq-pkgc
     - objectDefinition:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
@@ -201,11 +201,11 @@ spec:
                 apiVersion: operators.coreos.com/v1
                 kind: OperatorGroup
                 metadata:
-                  name: demo-amp-pkgc-operator
-                  namespace: demo-amp-pkgc
+                  name: demo-amq-pkgc-operator
+                  namespace: demo-amq-pkgc
                 spec:
                   targetNamespaces:
-                    - demo-amp-pkgc
+                    - demo-amq-pkgc
     - objectDefinition:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
@@ -221,7 +221,7 @@ spec:
                 kind: Subscription
                 metadata:
                   name: amq-broker-rhel8
-                  namespace: demo-amp-pkgc
+                  namespace: demo-amq-pkgc
                 spec:
                   installPlanApproval: Automatic
                   name: amq-broker-rhel8
@@ -249,8 +249,8 @@ spec:
       - key: purpose
         operator: In
         values:
-          - development
-          - production
+          - sno
+          - converged
 EOF
 ```
 
@@ -289,7 +289,7 @@ git push
 ###  Deploy ActiveMQArtemis managed clusters
 **Git clone**
 ```bash 
-git clone https://gitea-with-admin-gitea.apps.ocp4.example.com/user1/applications.git
+git clone https://gitea-with-admin-gitea.apps.ocp4.examqle.com/user1/applications.git
 cd applications
 ```
 
