@@ -1,12 +1,8 @@
 apiVersion: broker.amq.io/v2alpha5
 kind: ActiveMQArtemis
 metadata:
-  creationTimestamp: '2022-06-16T23:45:51Z'
-  generation: 1
   name: dc-broker
-  namespace: demo-amq-dc
-  resourceVersion: '2502243'
-  uid: 669549a1-4c51-4d39-a5c9-b92a65da7a6e
+  namespace: demo-amq-pkgc
 spec:
   acceptors:
     - port: 5672
