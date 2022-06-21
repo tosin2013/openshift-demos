@@ -61,7 +61,7 @@ spec:
         metadata:
           name: amq-broker-rhel8-operator-subscription
         spec:
-          remediationAction: inform
+          remediationAction: enforce
           severity: high
           object-templates:
             - complianceType: musthave
@@ -70,8 +70,9 @@ spec:
                 kind: Subscription
                 metadata:
                   name: amq-broker-rhel8
-                  namespace:  demo-amq-dc
+                  namespace: openshift-operators
                 spec:
+                  channel: 7.10.x
                   installPlanApproval: Automatic
                   name: amq-broker-rhel8
                   source: redhat-operators
@@ -182,7 +183,7 @@ spec:
         metadata:
           name: amq-broker-rhel8-operator-pkgc-subscription
         spec:
-          remediationAction: inform
+          remediationAction: enforce
           severity: high
           object-templates:
             - complianceType: musthave
@@ -191,8 +192,9 @@ spec:
                 kind: Subscription
                 metadata:
                   name: amq-broker-rhel8
-                  namespace: demo-amq-pkgc
+                  namespace: openshift-operators
                 spec:
+                  channel: 7.10.x
                   installPlanApproval: Automatic
                   name: amq-broker-rhel8
                   source: redhat-operators
