@@ -59,25 +59,6 @@ spec:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
         metadata:
-          name: amq-broker-rhel8-operator-group
-        spec:
-          remediationAction: inform
-          severity: high
-          object-templates:
-            - complianceType: musthave
-              objectDefinition:
-                apiVersion: operators.coreos.com/v1
-                kind: OperatorGroup
-                metadata:
-                  name: demo-amq-dc-operator
-                  namespace: demo-amq-dc
-                spec:
-                  targetNamespaces:
-                    - demo-amq-dc
-    - objectDefinition:
-        apiVersion: policy.open-cluster-management.io/v1
-        kind: ConfigurationPolicy
-        metadata:
           name: amq-broker-rhel8-operator-subscription
         spec:
           remediationAction: inform
@@ -195,25 +176,6 @@ spec:
                 kind: Namespace
                 metadata:
                   name: demo-amq-pkgc
-    - objectDefinition:
-        apiVersion: policy.open-cluster-management.io/v1
-        kind: ConfigurationPolicy
-        metadata:
-          name: amq-broker-rhel8-operator-pkgc-group
-        spec:
-          remediationAction: inform
-          severity: high
-          object-templates:
-            - complianceType: musthave
-              objectDefinition:
-                apiVersion: operators.coreos.com/v1
-                kind: OperatorGroup
-                metadata:
-                  name: demo-amq-pkgc-operator
-                  namespace: demo-amq-pkgc
-                spec:
-                  targetNamespaces:
-                    - demo-amq-pkgc
     - objectDefinition:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
