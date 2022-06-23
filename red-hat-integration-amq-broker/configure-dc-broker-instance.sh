@@ -21,7 +21,7 @@ tree .
 
 curl -o $HOME/applications/managed/amq-broker/overlays/local-cluster/kustomization.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/kustomization.yaml
 curl -o $HOME/applications/managed/amq-broker/overlays/local-cluster/amq-broker.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/local-cluster-amq-broker.yaml
-curl -o $HOME/applications/managed/amq-broker/overlays/local-cluster/amq-address.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls//Users/takinosh/workspace/application/amq-address.yaml
+curl -o $HOME/applications/managed/amq-broker/overlays/local-cluster/amq-address.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/amq-address.yaml
 curl -o $HOME/applications/managed/amq-broker/overlays/local-cluster/IoT.simulator.configmap.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.configmap.yaml
 curl -o $HOME/applications/managed/amq-broker/overlays/local-cluster/IoT.simulator.role.binding.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.role.binding.yaml
 curl -o $HOME/applications/managed/amq-broker/overlays/local-cluster/IoT.simulator.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.yaml
@@ -30,7 +30,7 @@ kustomize build $HOME/applications/managed/amq-broker/overlays/local-cluster
 
 curl -o $HOME/applications/managed/amq-broker/overlays/converged/kustomization.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/kustomization.yaml
 curl -o $HOME/applications/managed/amq-broker/overlays/converged/amq-broker.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/converged-amq-broker.yaml
-curl -o $HOME/applications/managed/amq-broker/overlays/converged/amq-address.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls//Users/takinosh/workspace/application/amq-address.yaml
+curl -o $HOME/applications/managed/amq-broker/overlays/converged/amq-address.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/amq-address.yaml
 curl -o $HOME/applications/managed/amq-broker/overlays/converged/IoT.simulator.configmap.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.configmap.yaml
 curl -o $HOME/applications/managed/amq-broker/overlays/converged/IoT.simulator.role.binding.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.role.binding.yaml
 curl -o $HOME/applications/managed/amq-broker/overlays/converged/IoT.simulator.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.yaml
@@ -39,7 +39,7 @@ kustomize build $HOME/applications/managed/amq-broker/overlays/converged
 curl -o $HOME/applications/managed/amq-broker/overlays/sno/kustomization.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/kustomization.yaml
 curl -o $HOME/applications/managed/amq-broker/overlays/sno/amq-broker.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/sno-amq-broker.yaml
 curl -o $HOME/applications/managed/amq-broker/overlays/sno/amq-broker.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/sno-amq-broker.yaml
-curl -o $HOME/applications/managed/amq-broker/overlays/sno/amq-address.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls//Users/takinosh/workspace/application/amq-address.yaml
+curl -o $HOME/applications/managed/amq-broker/overlays/sno/amq-address.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/amq-address.yaml
 curl -o $HOME/applications/managed/amq-broker/overlays/sno/IoT.simulator.configmap.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.configmap.yaml
 curl -o $HOME/applications/managed/amq-broker/overlays/sno/IoT.simulator.role.binding.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.role.binding.yaml
 curl -o $HOME/applications/managed/amq-broker/overlays/sno/IoT.simulator.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.yaml
