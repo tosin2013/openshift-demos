@@ -1,4 +1,8 @@
 bases:
 - ../../base
 resources:
-- dc-broker.yaml
+- amq-broker.yaml
+- amq-address.yaml
+- IoT.simulator.configmap.yaml
+- IoT.simulator.role.binding.yaml
+- IoT.simulator.yaml

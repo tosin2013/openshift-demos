@@ -1,0 +1,14 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  # Must match the 'spring.application.name' property of the application
+  name: sboot-amq-send
+  namespace: demo-amq-dc
+data:
+  application.properties: |
+    # Override the configuration properties here
+    camel.custom.myproperty=Message Sent
+    camel.custom.myaddress=sampleaddress
+    camel.component.paho.server-u-r-is=tcp://amq-broker-ss-0.amq-broker-hdls-svc.demo-amq-dc.svc.cluster.local:1883
+    camel.component.paho.user-name=admin
+    camel.component.paho.password=admin    

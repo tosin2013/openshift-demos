@@ -1,0 +1,16 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: amq-pot-rb
+  namespace: demo-amq-dc
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: view
+subjects:
+- kind: ServiceAccount
+  name: camel-amq-edge-sa
+  namespace: demo-amq-dc
+- kind: ServiceAccount
+  name: default
+  namespace: demo-amq-dc

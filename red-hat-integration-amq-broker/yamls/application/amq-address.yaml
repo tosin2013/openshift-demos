@@ -1,0 +1,9 @@
+apiVersion: broker.amq.io/v1beta1
+kind: ActiveMQArtemisAddress
+metadata:
+  name: ex-aaoaddress
+  namespace: demo-amq-dc
+spec:
+  addressName: sampleaddress
+  queueName: sampleaddress
+  routingType: Multicast

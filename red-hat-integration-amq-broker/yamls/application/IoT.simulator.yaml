@@ -1,0 +1,10 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: camel-sboot-rest-amq
+  namespace: demo-amq-dc
+spec:
+  template:
+    spec:
+      containers:
+        - image: 'quay.io/naveenkendyala/camel-sboot-rest-amq:7.10.0'
