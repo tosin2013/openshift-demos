@@ -275,6 +275,12 @@ chmod +x configure-dc-broker-instance.sh
 ```
 
 **Optional Cleanup**
+```
+cd ~
+curl -OL https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/cleanup.sh
+chmod +x cleanup.sh
+./cleanup.sh
+```
 
 > if you are manually creating the files review the script and url 
 * https://github.com/tosin2013/openshift-demos/blob/master/red-hat-integration-amq-broker/configure-dc-broker-instance.sh
