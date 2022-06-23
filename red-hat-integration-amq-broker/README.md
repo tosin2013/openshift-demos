@@ -269,6 +269,7 @@ cd applications
 > if you are running on linux box run the script below 
 ```bash
 curl -OL https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/configure-dc-broker-instance.sh
+chmod +x configure-dc-broker-instance.sh
 ./configure-dc-broker-instance.sh
 ```
 > if you are manually creating the files review the script and url 
