@@ -2,7 +2,7 @@
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: sno-dc-broker-development
+  name: sno-amq-broker-development
   namespace: acm-subscriptions
 spec:
   clusterSelector:
