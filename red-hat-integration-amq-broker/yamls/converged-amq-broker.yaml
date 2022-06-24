@@ -48,4 +48,4 @@ spec:
 status:
   podStatus:
     ready:
-      - dc-broker-ss-0
+      - amq-broker-instance-ss-0

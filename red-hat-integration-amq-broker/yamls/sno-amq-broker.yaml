@@ -1,7 +1,7 @@
 apiVersion: broker.amq.io/v2alpha5
 kind: ActiveMQArtemis
 metadata:
-  name: dc-broker
+  name: amq-broker-instance
   namespace: demo-amq-pkgc
 spec:
   acceptors:
@@ -48,4 +48,4 @@ spec:
 status:
   podStatus:
     ready:
-      - dc-broker-ss-0
+      - amq-broker-instance-ss-0
