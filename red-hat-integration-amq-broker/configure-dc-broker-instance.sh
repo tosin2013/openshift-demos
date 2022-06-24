@@ -25,6 +25,8 @@ curl -o -s  $HOME/applications/managed/amq-broker/overlays/local-cluster/amq-add
 curl -o -s  $HOME/applications/managed/amq-broker/overlays/local-cluster/IoT.simulator.configmap.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.configmap.yaml
 curl -o -s  $HOME/applications/managed/amq-broker/overlays/local-cluster/IoT.simulator.role.binding.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.role.binding.yaml
 curl -o -s  $HOME/applications/managed/amq-broker/overlays/local-cluster/IoT.simulator.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.yaml
+tree  $HOME/applications/managed/amq-broker/overlays/local-cluster
+sleep 3s
 kustomize build $HOME/applications/managed/amq-broker/overlays/local-cluster
 
 
@@ -34,6 +36,8 @@ curl -o -s  $HOME/applications/managed/amq-broker/overlays/converged/amq-address
 curl -o -s  $HOME/applications/managed/amq-broker/overlays/converged/IoT.simulator.configmap.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.configmap.yaml
 curl -o -s  $HOME/applications/managed/amq-broker/overlays/converged/IoT.simulator.role.binding.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.role.binding.yaml
 curl -o -s  $HOME/applications/managed/amq-broker/overlays/converged/IoT.simulator.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.yaml
+tree  $HOME/applications/managed/amq-broker/overlays/converged
+sleep 3s
 kustomize build $HOME/applications/managed/amq-broker/overlays/converged
 
 curl -o -s  $HOME/applications/managed/amq-broker/overlays/sno/kustomization.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/kustomization.yaml
@@ -43,6 +47,8 @@ curl -o -s  $HOME/applications/managed/amq-broker/overlays/sno/amq-address.yaml 
 curl -o -s  $HOME/applications/managed/amq-broker/overlays/sno/IoT.simulator.configmap.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.configmap.yaml
 curl -o -s  $HOME/applications/managed/amq-broker/overlays/sno/IoT.simulator.role.binding.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.role.binding.yaml
 curl -o -s  $HOME/applications/managed/amq-broker/overlays/sno/IoT.simulator.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.yaml
+tree  $HOME/applications/managed/amq-broker/overlays/sno
+sleep 3s
 kustomize build $HOME/applications/managed/amq-broker/overlays/sno
 
 cd $HOME/applications
@@ -57,19 +63,24 @@ cd $HOME/rhacm-configuration/rhacm-root/subscriptions/amq-broker/local-cluster
 curl -o -s  $HOME/rhacm-configuration/rhacm-root/subscriptions/amq-broker/local-cluster/placementrule.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/local-cluster-placementrule.yaml
 curl -o -s  $HOME/rhacm-configuration/rhacm-root/subscriptions/amq-broker/local-cluster/subscription.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/local-cluster-subscription.yaml
 curl -o -s  $HOME/rhacm-configuration/rhacm-root/subscriptions/amq-broker/local-cluster/application.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/local-cluster-application.yaml
-
+tree  $HOME/rhacm-configuration/rhacm-root/subscriptions/amq-broker/local-cluster
+sleep 3s
 
 mkdir -p $HOME/rhacm-configuration/rhacm-root/subscriptions/amq-broker/sno
 cd $HOME/rhacm-configuration/rhacm-root/subscriptions/amq-broker/sno
 curl -o -s  $HOME/rhacm-configuration/rhacm-root/subscriptions/amq-broker/sno/placementrule.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/sno-placementrule.yaml
 curl -o -s  $HOME/rhacm-configuration/rhacm-root/subscriptions/amq-broker/sno/subscription.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/sno-subscription.yaml
 curl -o -s  $HOME/rhacm-configuration/rhacm-root/subscriptions/amq-broker/sno/application.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/sno-application.yaml
+tree  $HOME/rhacm-configuration/rhacm-root/subscriptions/amq-broker/sno
+sleep 3s
 
 mkdir -p $HOME/rhacm-configuration/rhacm-root/subscriptions/amq-broker/converged
 cd $HOME/rhacm-configuration/rhacm-root/subscriptions/amq-broker/converged
 curl -o -s  $HOME/rhacm-configuration/rhacm-root/subscriptions/amq-broker/converged/placementrule.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/converged-placementrule.yaml
 curl -o -s  $HOME/rhacm-configuration/rhacm-root/subscriptions/amq-broker/converged/subscription.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/converged-subscription.yaml
 curl -o -s  $HOME/rhacm-configuration/rhacm-root/subscriptions/amq-broker/converged/application.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/converged-application.yaml
+tree  $HOME/rhacm-configuration/rhacm-root/subscriptions/amq-broker/converged
+sleep 3s
 
 cd $HOME/rhacm-configuration
 git add -A
