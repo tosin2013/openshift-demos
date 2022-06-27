@@ -35,20 +35,16 @@ oc get pods -n openshift-user-workload-monitoring
 
 ## Deploy sample Application
 ```
-oc create -f application/deployment.yaml
+oc create -k deploy
 ```
 
-## Deploy service 
-```
-oc create -f service/deployment.yaml
-```
 
 ### View metrics on OpenShift Cluster 
 ![20211025115123](https://i.imgur.com/H5uS8ir.png)
 
 ## To create custom dashboards in Grafana use ACM
 * [Red Hat Advanced Cluster Management for Kubernetes](https://www.redhat.com/en/technologies/management/advanced-cluster-management)
-* [Product Documentation for Red Hat Advanced Cluster Management for Kubernetes 2.3](https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.3)
+* [Product Documentation for Red Hat Advanced Cluster Management for Kubernetes 2.5](https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.5)
 
 ### Login to ACM hub cluster with Observability operator installed
 

@@ -11,5 +11,5 @@ spec:
     scheme: http
   namespaceSelector:
     matchNames:
-      - a-service
+      - opensift-examples
   selector: {}
