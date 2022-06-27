@@ -4,8 +4,8 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: opensift-examples
-  name: opensift-examples
+    app: nginxapp
+  name: nginxapp
 spec:
   ports:
   - name: http
@@ -17,7 +17,7 @@ spec:
     protocol: TCP
     targetPort: 9113
   selector:
-    app: opensift-examples
+    app: nginxapp
   type: ClusterIP
 status:
   loadBalancer: {}

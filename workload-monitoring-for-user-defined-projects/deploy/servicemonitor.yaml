@@ -2,8 +2,8 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   labels:
-    app: opensift-examples
-  name: opensift-examples
+    app: nginxapp
+  name: nginxapp
 spec:
   endpoints:
   - interval: 30s
@@ -11,5 +11,5 @@ spec:
     scheme: http
   namespaceSelector:
     matchNames:
-      - opensift-examples
+      - user-monitoring
   selector: {}

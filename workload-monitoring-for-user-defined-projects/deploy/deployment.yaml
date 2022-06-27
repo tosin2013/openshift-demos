@@ -4,22 +4,22 @@ kind: Deployment
 metadata:
   annotations: null
   labels:
-    app: opensift-examples
-    app.kubernetes.io/component: opensift-examples
-    app.kubernetes.io/instance: opensift-examples
-    app.kubernetes.io/part-of: opensift-examples
+    app: nginxapp
+    app.kubernetes.io/component: nginxapp
+    app.kubernetes.io/instance: nginxapp
+    app.kubernetes.io/part-of: nginxapp
     app.openshift.io/runtime: openshift
-  name: opensift-examples
+  name: nginxapp
 spec:
   progressDeadlineSeconds: 30
   replicas: 1
   selector:
     matchLabels:
-      app: opensift-examples
+      app: nginxapp
   template:
     metadata:
       labels:
-        app: opensift-examples
+        app: nginxapp
     spec:
       containers:
       - image: quay.io/openshift-examples/web:master
