@@ -112,6 +112,7 @@ oc apply -n open-cluster-management-observability -f observability-metrics-custo
 
 
 ## Test Query
+![20220627102256](https://i.imgur.com/vvfCV72.png)
 ```
 artemis_durable_message_count{address="sampleaddress"}
 ```
