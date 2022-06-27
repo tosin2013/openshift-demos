@@ -24,8 +24,6 @@ spec:
 
 **Create ClusterRoleBinding**
 ```
-
-
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
@@ -110,6 +108,12 @@ YAML
 > WIP
 ```
 oc apply -n open-cluster-management-observability -f observability-metrics-custom-allowlist.yaml
+```
+
+
+## Test Query
+```
+artemis_durable_message_count{address="sampleaddress"}
 ```
 
 ## Examples
