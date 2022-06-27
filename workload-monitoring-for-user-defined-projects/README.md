@@ -38,15 +38,15 @@ oc get pods -n openshift-user-workload-monitoring
 oc create -k deploy
 ```
 
-
 ### View metrics on OpenShift Cluster 
-![20211025115123](https://i.imgur.com/H5uS8ir.png)
+![20220627123755](https://i.imgur.com/VCvZTGt.png)
 
-## To create custom dashboards in Grafana use ACM
+# To create custom dashboards in Grafana using ACM
 * [Red Hat Advanced Cluster Management for Kubernetes](https://www.redhat.com/en/technologies/management/advanced-cluster-management)
 * [Product Documentation for Red Hat Advanced Cluster Management for Kubernetes 2.5](https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.5)
 
 ### Login to ACM hub cluster with Observability operator installed
+[Observing environments introduction](https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.5/html/observability/observing-environments-intro)
 
 ### Create observability-metrics-custom-allowlist.yaml
 > This will allow metrics to populate for each application metric
@@ -73,10 +73,13 @@ YAML
 ```
 
 ### Apply config map against RHACM
-> WIP
 ```
 oc apply -n open-cluster-management-observability -f observability-metrics-custom-allowlist.yaml
 ```
 
 ## To create custom dashboard for Application metrics 
 [How to design a grafana dashboard](https://github.com/open-cluster-management/multicluster-observability-operator/tree/main/tools)
+
+## View Metrics on RHACM
+> login using the https://multicloud-console.apps.cluster.example.com/grafana-dev/ url
+![20220627123113](https://i.imgur.com/WH1QqSl.png)
