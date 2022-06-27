@@ -22,6 +22,7 @@ spec:
   namespaceSelector:
     matchNames:
       - demo-amq-dc
+  selector: {}
 ```
 
 
