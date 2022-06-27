@@ -9,16 +9,16 @@ metadata:
   labels:
     k8s-app: amq-broker-instance-pro
   name: amq-broker-instance-pro
-  namespace: demo-amq-dc
+  namespace: openshift-monitoring
 spec:
   endpoints:
     - interval: 30s
       path: /metrics
       port: wconsj-0
       scheme: http
-  selector:
-    matchLabels:
-      application: amq-broker-instance-app
+  namespaceSelector:
+    matchNames:
+      - demo-amq-dc
 ```
 
 
@@ -111,14 +111,19 @@ oc apply -n open-cluster-management-observability -f observability-metrics-custo
 ```
 
 
-## Test Query
+## Test Query on OpenShift 
 ![20220627102256](https://i.imgur.com/vvfCV72.png)
 ```
 artemis_durable_message_count{address="sampleaddress"}
 ```
 
-## Examples
-![20220625181840](https://i.imgur.com/9GM6NG7.png)
-![20220625182049](https://i.imgur.com/5OgVnJP.png)
+
+## Test Query on RHACM
+![20220627105303](https://i.imgur.com/OO0WX52.png)
+```
+artemis_durable_message_count{address="sampleaddress"}
+```
+
+
 
 
