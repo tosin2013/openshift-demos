@@ -22,6 +22,43 @@ spec:
 ```
 
 
+**Create ClusterRoleBinding**
+```
+
+
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name:  amq-broker-instance-pro
+subjects:
+  - kind: ServiceAccount
+    name: prometheus-k8s
+    namespace: openshift-monitoring
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name:  amq-broker-instance-pro
+```
+
+**Create Cluster Role for service**
+```
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: amq-broker-instance-pro
+rules:
+  - verbs:
+      - get
+      - watch
+      - list
+    apiGroups:
+      - ''
+    resources:
+      - pods
+      - services
+      - endpoints
+ ```
+
 ### Create observability-metrics-custom-allowlist.yaml
 > This will allow metrics to populate for each application metric
 ```

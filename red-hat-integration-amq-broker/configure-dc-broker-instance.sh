@@ -1,4 +1,5 @@
 #!/bin/bash
+set -xe 
 
 if [ ! -d $HOME/applications ]; then
   echo "Please download the applications to $HOME/applications"
