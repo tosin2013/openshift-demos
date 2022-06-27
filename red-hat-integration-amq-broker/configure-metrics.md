@@ -4,6 +4,25 @@
 # How to design a grafana dashboard on ACM
 [How to design a grafana dashboard](https://github.com/stolostron/multicluster-observability-operator/tree/main/tools)
 
+## Enable user workload monitoring
+```
+oc create -f - <<EOF
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cluster-monitoring-config
+  namespace: openshift-monitoring
+data:
+  config.yaml: |
+    enableUserWorkload: true
+EOF
+```
+
+##  Check the user workload monitoring status
+```
+oc get pods -n openshift-user-workload-monitoring
+```
+
 **Create Service Monitor**
 ```
 apiVersion: monitoring.coreos.com/v1
