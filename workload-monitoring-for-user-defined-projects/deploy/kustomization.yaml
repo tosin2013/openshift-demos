@@ -7,3 +7,4 @@ resources:
 - servicemonitor.yaml
 - role.yaml
 - rolebinding.yaml
+- route.yaml

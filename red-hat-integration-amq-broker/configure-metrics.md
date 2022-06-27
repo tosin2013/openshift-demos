@@ -1,6 +1,9 @@
 # Deploy the Red Hat Integration - AMQ Broker for RHEL 8 (Multiarch) Operator to managed clusters Metrics
 ![20220627111636](https://i.imgur.com/LPRFX6B.png)
 
+# How to design a grafana dashboard on ACM
+[How to design a grafana dashboard](https://github.com/stolostron/multicluster-observability-operator/tree/main/tools)
+
 **Create Service Monitor**
 ```
 apiVersion: monitoring.coreos.com/v1
