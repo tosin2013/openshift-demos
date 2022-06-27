@@ -286,3 +286,6 @@ chmod +x cleanup.sh
 * https://github.com/tosin2013/openshift-demos/blob/master/red-hat-integration-amq-broker/configure-dc-broker-instance.sh
 * https://github.com/tosin2013/openshift-demos/tree/master/red-hat-integration-amq-broker/yamls
 
+
+## Add metrics 
+[Deploy the Red Hat Integration - AMQ Broker for RHEL 8 (Multiarch) Operator to managed clusters Metrics](configure-metrics.md)

@@ -111,6 +111,13 @@ oc apply -n open-cluster-management-observability -f observability-metrics-custo
 ```
 
 
+
+## Optional run load test
+> Edit URL in script
+```
+./load_test.sh
+```
+
 ## Test Query on OpenShift 
 ![20220627102256](https://i.imgur.com/vvfCV72.png)
 ```
