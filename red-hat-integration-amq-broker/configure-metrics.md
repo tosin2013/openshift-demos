@@ -1,5 +1,5 @@
-# Deploy the Red Hat Integration - AMQ Broker for RHEL 8 (Multiarch) Operator to managed clusters Metrics -WIP
-
+# Deploy the Red Hat Integration - AMQ Broker for RHEL 8 (Multiarch) Operator to managed clusters Metrics
+![20220627111636](https://i.imgur.com/LPRFX6B.png)
 
 **Create Service Monitor**
 ```
