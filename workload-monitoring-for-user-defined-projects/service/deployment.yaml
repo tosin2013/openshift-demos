@@ -9,6 +9,7 @@ spec:
   - interval: 30s
     port: metrics
     scheme: http
-  selector:
-    matchLabels:
-      app: opensift-examples
+  namespaceSelector:
+    matchNames:
+      - a-service
+  selector: {}

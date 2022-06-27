@@ -1,4 +1,14 @@
-# Enabling monitoring for user-defined projects
+# Enabling monitoring for user-defined projects with RHACM Integration
+
+## Clone repo 
+```
+https://github.com/tosin2013/openshift-demos.git
+```
+
+## cd into openshift-demos/workload-monitoring-for-user-defined-projects
+```
+cd openshift-demos/workload-monitoring-for-user-defined-projects
+```
 
 ## Enable user workload monitoring
 ```
