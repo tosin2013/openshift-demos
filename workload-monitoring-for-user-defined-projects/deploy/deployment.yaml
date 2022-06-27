@@ -10,6 +10,7 @@ metadata:
     app.kubernetes.io/part-of: nginxapp
     app.openshift.io/runtime: openshift
   name: nginxapp
+  namespace: user-monitoring
 spec:
   progressDeadlineSeconds: 30
   replicas: 1

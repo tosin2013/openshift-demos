@@ -4,6 +4,7 @@ metadata:
   labels:
     app: nginxapp
   name: nginxapp
+  namespace: openshift-monitoring
 spec:
   endpoints:
   - interval: 30s

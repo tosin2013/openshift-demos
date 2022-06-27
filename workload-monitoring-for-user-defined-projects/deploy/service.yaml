@@ -6,6 +6,7 @@ metadata:
   labels:
     app: nginxapp
   name: nginxapp
+  namespace: user-monitoring
 spec:
   ports:
   - name: http
