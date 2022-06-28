@@ -26,6 +26,9 @@ curl -o  $HOME/applications/managed/amq-broker/overlays/local-cluster/amq-addres
 curl -o  $HOME/applications/managed/amq-broker/overlays/local-cluster/IoT.simulator.configmap.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.configmap.yaml
 curl -o  $HOME/applications/managed/amq-broker/overlays/local-cluster/IoT.simulator.role.binding.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.role.binding.yaml
 curl -o  $HOME/applications/managed/amq-broker/overlays/local-cluster/IoT.simulator.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.yaml
+curl -o  $HOME/applications/managed/amq-broker/overlays/local-cluster/clusterrole.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/clusterrole.yaml
+curl -o  $HOME/applications/managed/amq-broker/overlays/local-cluster/clusterrolebinding.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/clusterrolebinding.yaml
+curl -o  $HOME/applications/managed/amq-broker/overlays/local-cluster/service-monitor.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/service-monitor-local-cluster.yaml
 tree  $HOME/applications/managed/amq-broker/overlays/local-cluster
 sleep 3s
 kustomize build $HOME/applications/managed/amq-broker/overlays/local-cluster
@@ -37,6 +40,9 @@ curl -o  $HOME/applications/managed/amq-broker/overlays/converged/amq-address.ya
 curl -o  $HOME/applications/managed/amq-broker/overlays/converged/IoT.simulator.configmap.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.configmap.yaml
 curl -o  $HOME/applications/managed/amq-broker/overlays/converged/IoT.simulator.role.binding.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.role.binding.yaml
 curl -o  $HOME/applications/managed/amq-broker/overlays/converged/IoT.simulator.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.yaml
+curl -o  $HOME/applications/managed/amq-broker/overlays/converged/clusterrole.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/clusterrole.yaml
+curl -o  $HOME/applications/managed/amq-broker/overlays/converged/clusterrolebinding.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/clusterrolebinding.yaml
+curl -o  $HOME/applications/managed/amq-broker/overlays/converged/service-monitor.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/service-monitor.yaml
 tree  $HOME/applications/managed/amq-broker/overlays/converged
 sleep 3s
 kustomize build $HOME/applications/managed/amq-broker/overlays/converged
@@ -48,6 +54,9 @@ curl -o  $HOME/applications/managed/amq-broker/overlays/sno/amq-address.yaml htt
 curl -o  $HOME/applications/managed/amq-broker/overlays/sno/IoT.simulator.configmap.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.configmap.yaml
 curl -o  $HOME/applications/managed/amq-broker/overlays/sno/IoT.simulator.role.binding.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.role.binding.yaml
 curl -o  $HOME/applications/managed/amq-broker/overlays/sno/IoT.simulator.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/IoT.simulator.yaml
+curl -o  $HOME/applications/managed/amq-broker/overlays/sno/clusterrole.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/clusterrole.yaml
+curl -o  $HOME/applications/managed/amq-broker/overlays/sno/clusterrolebinding.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/clusterrolebinding.yaml
+curl -o  $HOME/applications/managed/amq-broker/overlays/sno/service-monitor.yaml https://raw.githubusercontent.com/tosin2013/openshift-demos/master/red-hat-integration-amq-broker/yamls/application/service-monitor.yaml
 tree  $HOME/applications/managed/amq-broker/overlays/sno
 sleep 3s
 kustomize build $HOME/applications/managed/amq-broker/overlays/sno
