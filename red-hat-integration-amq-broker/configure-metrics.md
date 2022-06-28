@@ -6,7 +6,9 @@
 
 ## Enable user workload monitoring
 ```
-oc create -f - <<EOF
+$ oc edit ConfigMap cluster-monitoring-config -n openshift-monitoring
+
+# change enableUserWorkload to true
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -15,7 +17,6 @@ metadata:
 data:
   config.yaml: |
     enableUserWorkload: true
-EOF
 ```
 
 ##  Check the user workload monitoring status
