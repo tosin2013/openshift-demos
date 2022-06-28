@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    k8s-app: amq-broker-instance-pro
+  name: amq-broker-instance-pro
+  namespace: openshift-monitoring
+spec:
+  endpoints:
+    - interval: 30s
+      path: /metrics
+      port: wconsj-0
+      scheme: http
+  namespaceSelector:
+    matchNames:
+      - demo-amq-pkgc
+  selector: {}

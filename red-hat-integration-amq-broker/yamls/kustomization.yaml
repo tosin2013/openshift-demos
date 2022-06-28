@@ -6,3 +6,6 @@ resources:
 - IoT.simulator.configmap.yaml
 - IoT.simulator.role.binding.yaml
 - IoT.simulator.yaml
+- clusterrole.yaml
+- clusterrolebinding.yaml
+- service-monitor.yaml
