@@ -61,6 +61,9 @@ spec:
 ```
 
 Expose Grafana Route
+```
+oc expose svc grafana-service -n quarkuscoffeeshop-grafana
+```
 
 
 The default username and password is found in the 
