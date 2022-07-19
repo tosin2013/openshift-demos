@@ -5,7 +5,7 @@ Create an project for the Grafana instance
 oc new-project quarkuscoffeeshop-grafana
 ```
 
-Search for the `Grafana Oeprator`
+Search for the `Grafana Operator`
 ![](https://i.imgur.com/EvVBdk4.png)
 
 Install the `alpha` release
