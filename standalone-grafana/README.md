@@ -2,7 +2,7 @@
 
 Create an project for the Grafana instance
 ```
-oc new-projectquarkuscoffeeshop-grafana
+oc new-project quarkuscoffeeshop-grafana
 ```
 
 Search for the `Grafana Oeprator`
