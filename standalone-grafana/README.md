@@ -22,7 +22,7 @@ metadata:
   name: grafana-env
   namespace: quarkuscoffeeshop-grafana
 stringData:
-  GF_INSTALL_PLUGINS: https://github.com/performancecopilot/grafana-pcp/releases/download/v5.0.0/performancecopilot-pcp-app-5.0.0.zip;performancecopilot-pcp-app
+  GF_INSTALL_PLUGINS: https://github.com/performancecopilot/grafana-pcp/releases/download/v3.0.3/performancecopilot-pcp-app-3.0.3.zip;performancecopilot-pcp-app
 ```
 
 
