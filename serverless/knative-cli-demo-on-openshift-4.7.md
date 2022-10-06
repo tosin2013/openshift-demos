@@ -1,4 +1,4 @@
-# Knative CLI Demo On OpenShift 4.7
+# Knative CLI Demo On OpenShift 4.11
 
 ## Requirements:
 * install the kn cli
@@ -7,8 +7,8 @@
 ```
 wget https://mirror.openshift.com/pub/openshift-v4/clients/serverless/latest/kn-linux-amd64.tar.gz
 tar -zxvf kn-linux-amd64.tar.gz
-chmod +x kn
-sudo mv kn /usr/local/bin/
+chmod +x kn-linux-amd64 
+sudo mv kn-linux-amd64  /usr/local/bin/kn
 kn version
 ```
 
