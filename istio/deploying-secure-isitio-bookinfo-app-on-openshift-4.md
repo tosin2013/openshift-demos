@@ -18,8 +18,10 @@ There are three versions of the reviews microservice:
 $ oc new-project bookinfo
 ```
 
+```
 $ oc adm policy add-scc-to-group privileged system:serviceaccounts:bookinfo
 $ oc adm policy add-scc-to-group anyuid system:serviceaccounts:bookinfo
+```
 
 ```
 $ oc label namespace bookinfo istio-injection=enabled
