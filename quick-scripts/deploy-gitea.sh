@@ -29,10 +29,10 @@ spec:
 EOF
 oc apply -f gitea-catalog.yaml
 
-sleep 10s 
+sleep 30s
 
-PODNANE=$(oc get pods -n openshift-operators | grep gitea | awk '{print $1}')
-wait-for-me $PODNANE
+PODNAME=$(oc get pods -n openshift-operators | grep gitea | awk '{print $1}')
+wait-for-me $PODNAME
 
 oc new-project gitea
 
