@@ -1,4 +1,4 @@
-# Deploying Istio bookinfo app on OpenShift 4.8
+# Deploying Istio bookinfo app on OpenShift 4.12
 
 The Bookinfo application consists of the following microservices:
 * The productpage microservice calls the details and reviews microservices to populate the page.
@@ -91,6 +91,14 @@ curl -o /dev/null -s -w "%{http_code}\n" http://$GATEWAY_URL/productpage
 *Or navigate to  `http://$GATEWAYURL/productpage` in your browser.*
 ```
 echo http://$GATEWAY_URL/productpage
+```
+
+*Or run a for loop*
+```
+for i in {1..75}; do
+  curl -o /dev/null -s -w "%{http_code}\n" http://$GATEWAY_URL/productpage
+  sleep 2
+done
 ```
 
 **You can now open tools like kiali**
