@@ -87,7 +87,7 @@ kind: ServiceMeshControlPlane
 metadata:
   name: full
 spec:
-  version: v2.0
+  version: v2.4
   security:
     controlPlane:
       mtls: true
