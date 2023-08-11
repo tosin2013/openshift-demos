@@ -8,7 +8,7 @@ function wait-for-me(){
 
 }
 
-oc apply -f https://raw.githubusercontent.com/redhat-gpte-devopsautomation/gitea-operator/master/catalog_source.yaml
+oc apply -k https://github.com/rhpds/gitea-operator/OLMDeploy
 
 
 cat >gitea-catalog.yaml<<EOF
@@ -31,14 +31,14 @@ oc apply -f gitea-catalog.yaml
 
 sleep 30s
 
-PODNAME=$(oc get pods -n openshift-operators | grep gitea | awk '{print $1}')
+PODNAME=$(oc get pods -n gitea-operator | grep gitea-operator-controller-manager- | awk '{print $1}')
 wait-for-me $PODNAME
 
 oc new-project gitea
 
 
 cat >deploy-gitea.yaml<<EOF
-apiVersion: gpte.opentlc.com/v1
+apiVersion: pfe.rhpds.com/v1
 kind: Gitea
 metadata:
   name: gitea-with-admin
