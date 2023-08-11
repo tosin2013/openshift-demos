@@ -10,25 +10,6 @@ function wait-for-me(){
 
 oc apply -k https://github.com/rhpds/gitea-operator/OLMDeploy
 
-
-cat >gitea-catalog.yaml<<EOF
-apiVersion: operators.coreos.com/v1alpha1
-kind: Subscription
-metadata:
-  creationTimestamp: null
-  labels:
-    operators.coreos.com/gitea-operator.openshift-operators: ''
-  name: gitea-operator
-  namespace: openshift-operators
-spec:
-  channel: stable
-  installPlanApproval: Automatic
-  name: gitea-operator
-  source: redhat-gpte-gitea
-  sourceNamespace: openshift-marketplace
-EOF
-oc apply -f gitea-catalog.yaml
-
 sleep 30s
 
 PODNAME=$(oc get pods -n gitea-operator | grep gitea-operator-controller-manager- | awk '{print $1}')
