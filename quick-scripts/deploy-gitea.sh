@@ -9,8 +9,8 @@ function wait-for-me(){
 }
 
 oc apply -k https://github.com/rhpds/gitea-operator/OLMDeploy
-
-sleep 30s
+echo "Sleep for 60 seconds..."
+sleep 60s
 
 PODNAME=$(oc get pods -n gitea-operator | grep gitea-operator-controller-manager- | awk '{print $1}')
 wait-for-me $PODNAME
@@ -34,4 +34,4 @@ spec:
   giteaUserNumber: 1
   giteaUserPasswordLength: 16
 EOF
-oc apply -f deploy-gitea.yaml
+oc apply -f deploy-gitea.yaml -n gitea
