@@ -2,7 +2,7 @@
 
 
 function wait-for-me(){
-    while [[ $(oc get pods $1  -n openshift-operators -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') != "True" ]]; do
+    while [[ $(oc get pods $1  -n gitea-operator -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') != "True" ]]; do
         sleep 1
     done
 
