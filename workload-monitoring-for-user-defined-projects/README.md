@@ -44,10 +44,10 @@ oc create -k deploy
 
 # To create custom dashboards in Grafana using ACM
 * [Red Hat Advanced Cluster Management for Kubernetes](https://www.redhat.com/en/technologies/management/advanced-cluster-management)
-* [Product Documentation for Red Hat Advanced Cluster Management for Kubernetes 2.5](https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.5)
+* [Product Documentation for Red Hat Advanced Cluster Management for Kubernetes 2.5](https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.8)
 
 ### Login to ACM hub cluster with Observability operator installed
-[Observing environments introduction](https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.5/html/observability/observing-environments-intro)
+[Observing environments introduction](https://access.redhat.com/documentation/en-us/red_hat_advanced_cluster_management_for_kubernetes/2.8/html/observability/observing-environments-intro)
 
 ### Create observability-metrics-custom-allowlist.yaml
 > This will allow metrics to populate for each application metric
