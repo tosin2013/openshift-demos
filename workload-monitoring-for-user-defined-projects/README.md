@@ -2,7 +2,7 @@
 
 ## Clone repo 
 ```
-https://github.com/tosin2013/openshift-demos.git
+git clone https://github.com/tosin2013/openshift-demos.git
 ```
 
 ## cd into openshift-demos/workload-monitoring-for-user-defined-projects
