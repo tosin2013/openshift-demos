@@ -23,7 +23,7 @@ spec:
         app: nginxapp
     spec:
       containers:
-      - image: quay.io/openshift-examples/web:master
+      - image: quay.io/openshift-examples/web:main
         name: web
         ports:
         - containerPort: 8080
